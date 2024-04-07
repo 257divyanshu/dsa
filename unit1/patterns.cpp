@@ -1,51 +1,94 @@
 #include <iostream>
 using namespace std;
 
-// PATTERN 21
-// ****
-// *  *
-// *  *
-// ****
+// PATTERN 22
+// 33333
+// 32223
+// 32123
+// 32223
+// 33333
 int main()
 {
     int n;
     cout<<"Enter the value of n : ";
     cin>>n;
-    int m = n/2;
-    for(int i = 1; i<=m; i++)
-    {
-        for(int j = 1; j<=(m-i+1); j++)
+    for(int i = 1; i<=n-1; i++){
+        for(int j = n; j>=(n-i+1); j--)
         {
-            cout<<"*";
+            cout<<j;
         };
-        for(int j = 1; j<=2*(i-1); j++)
+        for(int j = 1; j<=((n-i)*2)-1; j++)
         {
-            cout<<" ";
+            cout<<(n-i+1);
         }
-        for(int j = 1; j<=(m-i+1); j++)
+        for(int j = n-i+1; j<=n; j++)
         {
-            cout<<"*";
+            cout<<j;
         };
         cout<<endl;
     };
-    for(int i = m; i>=1; i--)
+    for(int i = n; i>=1; i--)
     {
-        for(int j = 1; j<=(m-i+1); j++)
+        cout<<i;
+    };
+    for(int i = 2; i<=n; i++)
+    {
+        cout<<i;
+    };
+    cout<<endl;
+    for(int i = n-1; i>=1; i--){
+        for(int j = n; j>=(n-i+1); j--)
         {
-            cout<<"*";
+            cout<<j;
         };
-        for(int j = 1; j<=2*(i-1); j++)
+        for(int j = 1; j<=((n-i)*2)-1; j++)
         {
-            cout<<" ";
+            cout<<(n-i+1);
         }
-        for(int j = 1; j<=(m-i+1); j++)
+        for(int j = n-i+1; j<=n; j++)
         {
-            cout<<"*";
+            cout<<j;
         };
         cout<<endl;
     };
-    return 0;
 };
+
+// PATTERN 21
+// ****
+// *  *
+// *  *
+// ****
+// int main()
+// {
+//     int n;
+//     cout<<"Enter the value of n : ";
+//     cin>>n;
+//     for(int i = 1; i<=n; i++)
+//     {
+//         cout<<"*";
+//     };
+//     cout<<endl;
+//     for(int i = 1; i<=n-2; i++)
+//     {
+//         for(int j = 1; j<=n; j++)
+//         {
+//             if(j==1 || j==2+(n/2))
+//             {
+//                 cout<<"*";
+//             }
+//             else
+//             {
+//                 cout<<" ";
+//             };
+//         };
+//         cout<<endl;
+//     };
+//     for(int i = 1; i<=n; i++)
+//     {
+//         cout<<"*";
+//     };
+//     return 0;
+// };
 
 // PATTERN 20
 // *         *
