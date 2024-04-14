@@ -6,7 +6,6 @@ int main()
      return 0;
 };
 
-
 // MODERN SERVERS
 // can do 10^8 operations in 1s
 
@@ -79,7 +78,6 @@ int main()
 
 // FINALIZING THE TC
 // O(4n^3 + 3n^2 + 8) -> O(n^3)
-// 
 
 // THE THREE CASES
 // BEST CASE (omega notation) (lower bound)
@@ -104,7 +102,7 @@ int main()
 // RULES FOR ANALYZING TC
 // analyze for worst case scenario only
 // avoid constants
-// avoid lower values
+// avoid less significant values
 
 // INTRODUCTION
 // complexity is a way to judge code
