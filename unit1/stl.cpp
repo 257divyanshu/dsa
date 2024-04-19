@@ -79,23 +79,23 @@ using namespace std;
 // PAIR
 // is a datatype
 // include the utility header file
-int main()
-{
-    // example 1
-    pair<int,int> p = {1,3}; // declaration
-    cout<<p.first<<" "<<p.second<<endl; // accessing elements
-    // example 2
-    // pair<int,pair<int,int>> p2 = {1,{2,3}};
-    // cout<<p2.first<<" "<<p2.second.first<<" "<<p2.second.second<<endl;
-    // example 3
-    // pair<int,int> arr[] = {{1,2},{3,4},{5,6}};
-    // cout<<arr[0].first<<endl;
-    // cout<<arr[0].second<<endl;
-    // cout<<arr[1].first<<endl;
-    // cout<<arr[1].second<<endl;
-    // example 4
-    return 0;
-};
+// int main()
+// {
+//     // example 1
+//     pair<int,int> p = {1,3}; // declaration
+//     cout<<p.first<<" "<<p.second<<endl; // accessing elements
+//     // example 2
+//     // pair<int,pair<int,int>> p2 = {1,{2,3}};
+//     // cout<<p2.first<<" "<<p2.second.first<<" "<<p2.second.second<<endl;
+//     // example 3
+//     // pair<int,int> arr[] = {{1,2},{3,4},{5,6}};
+//     // cout<<arr[0].first<<endl;
+//     // cout<<arr[0].second<<endl;
+//     // cout<<arr[1].first<<endl;
+//     // cout<<arr[1].second<<endl;
+//     // example 4
+//     return 0;
+// };
 
 // STL PARTS
 // algorithm, container, function, iterator
