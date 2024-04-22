@@ -1,7 +1,105 @@
-#include <iostream>
-#include <vector>
-#include <iterator>
+#include <bits/stdc++.h>
 using namespace std;
+
+// SETS
+// sets are used stored unique elements in sorted format
+int main()
+{
+    // declaration
+    set<int> set1;
+    set<int> set2;
+    // insertion
+    set1.insert(1);
+    set1.insert(2);
+    set1.insert(3);
+    set2.insert(4);
+    set2.insert(5);
+    set2.insert(6);
+    // iterating over a set
+    for(auto it : set1)
+    {
+        cout<<it<<" ";
+    };
+    cout<<endl;
+    for(auto it : set2)
+    {
+        cout<<it<<" ";
+    };
+    cout<<endl;
+    // swap function
+    // set1.swap(set2);
+    // begin(), end() work the same way
+    // find() function
+    // auto it = set1.find(2);
+    // cout<<*(it)<<endl;
+    // erase() function
+    // for insertion single element
+    // set1.erase(2);
+    // set2.erase(4);
+    // for erasing a range of elements
+    // auto it1 = set1.find(2);
+    // auto it2 = set1.find(3);
+    // set1.erase(it1,it2);
+    // count() function
+    // returns either 1 or 0
+    // cout<<set1.count(1)<<endl;
+    // count() function
+    // for counting the number of occurences
+    // cout<<set1.count(1)<<endl;
+    return 0;
+};
+// in sets everything happens with O(logn)
+// MULTISET
+// elements are stored in sorted manner
+// elements need not be unique
+// if we erase an element in a multset then all the occurences of the element in the multiset will be erased
+// if we erase an element present at the specified iterator, then only the location that iterator points to will be deleted
+// UNORDERED SET
+// store unique elements in unsorted order
+// TC of most operation in unordered set is O(1) is worst case O(n)
+
+// MAP
+// keys are unique but values need not be unique
+// maps stores unique keys in sorted order
+// int main()
+// {
+//     // declaration
+//     map<int,char> map1;
+//     // insertion
+//     map1.insert({1,'a'});
+//     map1.insert({2,'b'});
+//     map1.insert({3,'c'});
+//     map1.insert({4,'d'});
+//     map1.insert({5,'e'});
+//     // iterating a map
+//     for(auto it : map1)
+//     {
+//         cout<<it.first<<" "<<it.second<<endl;
+//     };
+//     // accessing
+//     // cout<<map1[1]<<endl;
+//     // finding
+//     // auto it = map1.find(3);
+//     // cout<<(*(it)).second<<endl;
+//     // if the key isn't found it will point to map1.end();
+//     // earse function
+//     // map1.erase(2);
+//     // the erase function of map cannot be used to erase a range of elements
+//     // it can only be used to erase a specified key-value pair from the map
+//     // size() function
+//     // cout<<map1.size()<<endl;
+//     // empty() function
+//     // to check whether a map is empty or not
+//     // cout<<map1.empty()<<endl;
+//     // swap() function
+//     // to swap on array with another 
+//     // map1.swap(map2)
+//     return 0;
+// };
+// multiMap maps are used for storing duplicate keys in sorted manner
+// unorderedMap maps are used for storing key value pairs in unsorted format
+// maps work in TC of O(n)
+// unordered maps work in TC of O(1) in most cases (in worst case O(n))
 
 // VECTOR
 // arrays are static

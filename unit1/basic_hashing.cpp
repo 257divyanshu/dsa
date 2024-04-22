@@ -1,7 +1,59 @@
-#include <iostream>
+#include <bits/stdc++.h>
 using namespace std;
 
-// 
+// TIME COMPELXITY IN HASHING
+// using maps : sotring and fetching both takes O(logN) (in all cases)
+// using unordered maps : sorting and fetching takes O(1) (O(N) is worst case)
+// use unordered maps it it leads to TLE use maps
+
+// HASHING USING MAPSTO HASH CHARACTERS
+int main()
+{
+    cout << "Enter the string: ";
+    string str;
+    cin >> str;
+    map<char, int> map1;
+    for (int i = 0; i < str.length(); i++)
+    {
+        map1[str[i]]++;
+    };
+    for (auto it : map1)
+    {
+        cout << it.first << "->" << it.second << " ";
+    };
+    return 0;
+};
+
+// HASING USING MAPS TO HASH INTEGERS
+// int main()
+// {
+//     int n;
+//     cout<<"Enter the size of array: ";
+//     cin>>n;
+//     int arr[n];
+//     map<int,int> map1;
+//     cout<<"Enter the elements: ";
+//     for(int i = 0; i<n; i++)
+//     {
+//         cin>>arr[i];
+//         map1[arr[i]]++;
+//     };
+//     cout<<"data: "<<endl;
+//     for(auto it : map1)
+//     {
+//         cout<<it.first<<"->"<<it.second<<" ";
+//     };
+//     cout<<endl;
+//     // int num = 0;
+//     // while(num!=420)
+//     // {
+//     //     cout<<"Enter the num: ";
+//     //     cin>>num;
+//     //     cout<<num<<" occured "<<map1[num]<<" times"<<endl;
+//     // }
+//     return 0;
+// };
+// maps sorted all the elements in sorted manner
 
 // HASHING CHARACTERS OF A STRING USING ARRAYS
 // int main()
