@@ -1,7 +1,7 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-// MAXIMUM CONSECUTIVE ONES
+// 🟩 MAXIMUM CONSECUTIVE ONES
 // https://leetcode.com/problems/max-consecutive-ones/description/
 // TC is o(n)
 // int findMaxConsecutiveOnes(vector<int> &nums)
@@ -31,7 +31,7 @@ using namespace std;
 //     return maxCount;
 // };
 
-// FIND THE MISSING NUMBER
+// 🟩 FIND THE MISSING NUMBER
 // https://leetcode.com/problems/missing-number/description/
 // BRUTEFORCE METHOD
 // run a loop from 0 to n
@@ -45,7 +45,7 @@ using namespace std;
 // iterate over the given array to store the frequence of each element in the hash array
 // after this iterate the hash array to find which index contains the element 0
 // return the index that contains the element 0
-// TC is O(2n) ~ O(n)
+// TC is O(2n) ~ O(n) (2n because, we are doing two interations, one iteration over the array and second iteration over the map) (hashing an element into the unordered_map has time complexity = O(1))
 // SC is O(n)
 // OPTIMAL 1
 // sum approach
@@ -100,7 +100,7 @@ using namespace std;
 // TC is O(x) + O(n-x) = O(n)
 // SC is O(1) (no extra space) (but we are using the array)
 
-// LEFT ROTATE AN ARRAY D PLACES
+// 🟩 LEFT ROTATE AN ARRAY D PLACES
 // BRUTEFORCE METHOD
 // void rotateByD(vector<int> &vect, int k, int n)
 // {
@@ -131,7 +131,7 @@ using namespace std;
 // TC is O(d) + O(n-d) + O(n) = O(2n)
 // SC is O(1)
 
-// LEFT ROTATE AN ARRAY BY ONE PLACE
+// 🟩 LEFT ROTATE AN ARRAY BY ONE PLACE
 // https://www.naukri.com/code360/problems/left-rotate-an-array-by-one_5026278?utm_source=striver&utm_medium=website&utm_campaign=a_zcoursetuf&leftPanelTabValue=PROBLEM
 // BRUTEFORCE METHOD
 // store the first element in a temp variable
@@ -143,7 +143,7 @@ using namespace std;
 // we are using O(n) space to solve the problem (of the array)
 // but we are not using any extra space
 
-// REMOVE DUPLICATES
+// 🟩 REMOVE DUPLICATES
 // https://leetcode.com/problems/remove-duplicates-from-sorted-array/description/
 // BRUTEFORCE
 // make a set
@@ -170,7 +170,7 @@ using namespace std;
 //     return i + 1;
 // }
 
-// CHECK IF ARRAY IS SORTED AND ROTATE
+// 🟩 CHECK IF ARRAY IS SORTED AND ROTATE
 // https://leetcode.com/problems/check-if-array-is-sorted-and-rotated/description/
 // bool check(vector<int>& arr) {
 //         int count = 0;
@@ -189,7 +189,7 @@ using namespace std;
 //         return count<=1;
 //     };
 
-// CHECK IF THE ARRAY IS SORTED OR NOT
+// 🟩 CHECK IF THE ARRAY IS SORTED OR NOT
 // https://www.naukri.com/code360/problems/ninja-and-the-sorted-check_6581957?utm_source=striver&utm_medium=website&utm_campaign=a_zcoursetuf&leftPanelTabValue=PROBLEM
 // TC is O(n)
 // int isSorted(int n, vector<int> arr) {
@@ -204,7 +204,7 @@ using namespace std;
 //     return true;
 // }
 
-// SECOND LARGEST NUMBER
+// 🟩 SECOND LARGEST NUMBER
 // https://www.naukri.com/code360/problems/ninja-and-the-second-order-elements_6581960?utm_source=striver&utm_medium=website&utm_campaign=a_zcoursetuf&leftPanelTabValue=PROBLEM
 // BRUTEFORCE
 // sort the array
