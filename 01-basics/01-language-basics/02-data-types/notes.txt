@@ -1,0 +1,7 @@
+📍 datatypes
+- Data types define not only the nature of the data but also the operations you can perform on it and the amount of memory it will consume.
+- If you think of a variable as a box, then the data type is the label on that box telling the computer what’s inside and how to handle it.
+- C++ is a statically typed language, meaning you must specify the type of every variable at compile time. This ensures type safety and better performance, but it also means the compiler will throw errors if you try to assign incompatible types.
+- see 📸 image-01-cpp-datatypes
+- C++ also supports modifiers like unsigned, short, and long to tweak the size and range of numeric types. For example, unsigned int only stores non-negative integers but allows larger maximum values than a signed int.
+- Understanding data types is crucial for writing efficient, bug-free programs. In statically typed languages like C++ and Java, they help catch errors before running the code and allow for optimizations at compile time. In dynamically typed languages like Python and JavaScript, they offer flexibility but require extra care to avoid type mismatch errors.
