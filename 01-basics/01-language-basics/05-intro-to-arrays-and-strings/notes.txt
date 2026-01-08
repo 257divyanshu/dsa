@@ -1,0 +1,28 @@
+📍 shallow copy vs deep copy
+- Shallow Copy (Pointer/Reference): If you just copied the "address" (like a shortcut on your desktop), both variables would point to the exact same data. If you changed one, the other would change too. This happens with C-style strings (char*).
+- Deep Copy (std::string): The two variables become completely independent. Modifying the copy has zero effect on the original.
+
+🔬 Assigning one string to another makes a deep copy of the character sequence
+- When we assign one string to another (e.g., string B = A;), the computer does not just copy the address (or reference) of where the text is stored.
+- Instead, it goes to the computer memory, reads every single character from String A, allocates a brand new block of memory for String B, and pastes the characters there.
+
+📍 passing strings
+- When we pass a string as an argument to a function, we're essentially making a copy of the string. Any changes made to the string within the function won't affect the original string outside of it.
+- Strings in C++ can be assigned and passed like primitive types.
+
+📍 Strings
+- Strings are like a series of characters stored in a specific order.
+
+📍 why accessing elements of an array is a constant time operation?
+- because, it uses simple math to jump directly to the memory address
+- Since arrays are stored in contiguous (unbroken) blocks of memory, the computer calculates the address using this formula: Address = BaseAddress + (Index * SizeOfElement)
+- BaseAddress: The memory location where the array starts.
+- Index: The position you want (e.g., 5).
+- SizeOfElement: How many bytes an integer (or other type) takes up (e.g., 4 bytes).
+
+📍 Arrays
+- An array is a linear data structure.
+- An array is a collection of similar types of elements (Homogeneous elements) that have contiguous memory locations i.e One after another.
+- C++ arrays cannot store heterogeneous data.
+- indexing starts from 0
+- accessing elements of an array is a constant time operation

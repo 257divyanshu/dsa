@@ -1,0 +1,11 @@
+📍 If-else statements
+- they are like the Swiss Army knife of decision-making
+- they offer flexibility and can handle a wide range of conditions and branching logic
+- we can use them when we need to evaluate complex conditions or when conditions aren't based on simple equality checks
+- they are often the preferred choice for scenarios where the conditions are not easily enumerable or where we need to execute different blocks of code based on various conditions
+
+📍 switch case statements
+- they shine when we have a single variable to compare against multiple distinct values
+- they are concise, making the code cleaner and more structured
+
+- So, if-else statements and switch statements can complement each other, with if-else statements handling complex conditions and switch statements simplifying cases with multiple exact matches.
