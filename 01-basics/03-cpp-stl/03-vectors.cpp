@@ -28,7 +28,7 @@ int main()
     // vector<int> vect1(5); // 5 elements with value 0 or any garbage value (the value depends on the compiler)
     // 📍 copying a vector into another
     // vector<int> v1 = {1,2,3};
-    // vector<int> v2 = v1;
+    // vector<int> v2(v1);
     // 📍 accessing vector's elements
     // vector<int> v1 = {1,2,3};
     // cout<<v1[0]<<endl;
@@ -48,8 +48,77 @@ int main()
     // cout<<*(--it2)<<endl; // 6
     // cout<<*(--it2)<<endl; // 5
     // 📍 back()
-    vector<int> vect1 = {1,2,3,4,5};
-    cout<<vect1.back()<<endl; // 5 
-    // ⏸️ 21:30
+    // vector<int> vect1 = {1,2,3,4,5};
+    // cout<<vect1.back()<<endl; // 5
+    // 📍 iterating over the vector using iterators
+    // vector<int> vect1 = {1, 2, 3, 4, 5};
+    // for (vector<int>::iterator it = vect1.begin(); it != vect1.end(); it++)
+    // {
+    //     cout << *(it) << endl;
+    // }
+    // 📍 iterating over the vector using the 'auto' keyword
+    // vector<int> vect1 = {1, 2, 3, 4, 5};
+    // for (auto it = vect1.begin(); it != vect1.end(); it++)
+    // {
+    //     cout << *(it) << endl;
+    // }
+    // 📍 iterating over the vector
+    // vector<int> vect1 = {1, 2, 3, 4, 5};
+    // for(int num : vect1){
+    //     cout<<num<<endl;
+    // }
+    // for(auto num : vect1){
+    //     cout<<num<<endl;
+    // }
+    // 📍 erase() function
+    // vector<int> vect1 = {1, 2, 3, 4, 5};
+    // auto it1 = vect1.begin();
+    // - to delete one element, pass an iterator pointing to it
+    // vect1.erase(it1);
+    // - to delete a range of elements, pass the starting (inclusive) and the ending (exclusive) iterator
+    // vect1.erase(it1, it1+2);
+    // for(auto num : vect1){
+    //     cout<<num<<endl;
+    // };
+    // 📍 insert() function
+    // vector<int> vect1 = {1, 2, 3, 4, 5};
+    // - to insert an element, first specify the iterator pointing to the location where the element is to be inserted, then specify the element which is to be inserted
+    // vect1.insert(vect1.begin(), 0);
+    // - to insert multiple occurences of an element, first specify the iterator pointing to the location where the first element is to be inserted, then specify the number of occurences of the elements, then specify the element which is to be inserted
+    // vect1.insert(vect1.begin(),3,0);
+    // - to copy a vector into another using insert:
+    // vector<int> vect2;
+    // vect2.insert(vect2.begin(), vect1.begin(), vect1.end());
+    // for(auto num : vect1){
+    //     cout<<num<<endl;
+    // };
+    // for(auto num : vect2){
+    //     cout<<num<<endl;
+    // };
+    // 📍 pop_back() removes the last element
+    // vector<int> vect1 = {1, 2, 3, 4, 5};
+    // vect1.pop_back();
+    // for (auto num : vect1)
+    // {
+    //     cout << num << endl;
+    // };
+    // 📍 size()
+    // vector<int> vect1 = {1, 2, 3, 4, 5};
+    // cout<<vect1.size()<<endl;
+    // 📍 clear()
+    // vector<int> vect1 = {1, 2, 3, 4, 5};
+    // vect1.clear();
+    // cout<<vect1.size()<<endl;
+    // 📍 empty()
+    // vector<int> vect1 = {1, 2, 3, 4, 5};
+    // cout<<vect1.empty()<<endl;
+    // 📍 swap()
+    vector<int> vect1 = {1, 2, 3, 4, 5};
+    vector<int> vect2 = {5, 4, 3, 2, 1};
+    vect1.swap(vect2);
+    for (auto num : vect2)
+    {
+        cout << num << endl;
+    };
     return 0;
 };
