@@ -1,0 +1,1 @@
+- <bits/stdc++.h> is convenient for competitive programming, but it is bad practice in real-world development because it increases compilation time and includes a massive amount of unnecessary code

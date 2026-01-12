@@ -16,7 +16,7 @@ using namespace std;
 //     if (n < 0)
 //     {
 //         n = abs(n); // taking absolute value because logarithm is valid only for positive numbers
-//         // ❔1️⃣ Which it better in the current context: 'n = -n' or 'n = abs(n)'?
+//         // ❔1️⃣ Which is better in the current context: 'n = -n' or 'n = abs(n)'?
 //         // ✅1️⃣ ANSWER:
 //         // - both are safe, because we have handled the INT32_MIN case above
 //         // - but abs() is preferred, because it makes our intent ("we want the magnitude") clearer
