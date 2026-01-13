@@ -44,6 +44,7 @@ bool isArmstrong(int n)
     }
     return sumOfPowers == n;
 }
+
 // 📍 approach 2 (using integer math)
 // TC -> O ( ( log10 ( n ) ) ^ 2 )
 // SC -> O(1)
@@ -78,12 +79,13 @@ bool isArmstrong(int n)
 //     };
 //     return sumOfPowers == n;
 // }
+
 // 📍 approach 1 (using pow)
 // TC -> un-analyzed
 // SC -> O(1)
 // bool isArmstrong (int n){
 //     int digitCount = 0;
-//     int sum = 0;
+//     int sumOfPowers = 0;
 //     int m = n;
 //     do{
 //         digitCount++;
@@ -92,11 +94,12 @@ bool isArmstrong(int n)
 //     m = n;
 //     while(m!=0){
 //         int lastDigit = m%10;
-//         sum += round(pow(lastDigit,digitCount));
+//         sumOfPowers += round(pow(lastDigit,digitCount));
 //         m/=10;
 //     };
-//     return sum == n;
+//     return sumOfPowers == n;
 // }
+
 int main()
 {
     for (int i = 0; i <= 0; i++)
