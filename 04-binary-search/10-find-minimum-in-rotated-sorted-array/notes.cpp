@@ -1,42 +1,90 @@
 #include <bits/stdc++.h>
 using namespace std;
 
+// 🏆 approach 2
+
+// 📍 approach 2 (optimal approach)
+// - TC -> O(log2(n))
+// - SC -> O(1)
 int findMin(vector<int> &nums)
 {
     int start = 0;
     int end = nums.size() - 1;
+    int minElem = INT32_MAX;
     while (start <= end)
     {
         int mid = start + (end - start) / 2;
-        cout << "s -> " << start << " e -> " << end << " m -> " << mid << endl;
-        // ✅ if mid-1 is out of bound -> mid is 0
-        // ✅ if mid+1 is out of bound -> mid is n-1
-        // 📍 first modification
-        if(mid == nums.size() - 1){
-            cout << "mid+1 is out of bound -> mid is n-1" << endl;
-            return 0;
-        };
-        if ((nums[mid - 1] < nums[mid]) && nums[mid] > nums[mid + 1])
-        // 📍 second modification
-        // if ((mid == 0 || nums[mid - 1] < nums[mid]) && nums[mid] > nums[mid + 1])
+        if (nums[start] <= nums[end]) // 📝 optional optimization
         {
-            cout << "returning " << mid + 1 << endl;
-            return mid + 1;
+            if (nums[start] < minElem)
+            {
+                minElem = nums[start];
+            };
+            break;
         };
-        if (nums[mid] >= nums[0])
-        {
+        if (nums[start] <= nums[mid])
+        { // left part is sorted
+            if (nums[start] < minElem)
+            {
+                minElem = nums[start];
+            };
             start = mid + 1;
         }
         else
-        {
+        { // right part is sorted
+            if (nums[start] < minElem)
+            {
+                minElem = nums[start];
+            };
             end = mid - 1;
-        };
+        }
     };
-    cout << "s -> " << start << " e -> " << end << endl;
-    // return start;
-    // 📍 second modification
-    return -1;
-};
+    return minElem;
+}
+
+// 📍 approach 1
+// - edge test cases to think :
+//   - {1}
+//   - {1,2}
+//   - {2,1}
+//   - {1,2,3,4}
+//   - {4,1,2,3}
+// - TC -> O(log2(n))
+// - SC -> O(1)
+// int findMin(vector<int> &nums)
+// {
+//     int start = 0;
+//     int end = nums.size() - 1;
+//     while (start <= end)
+//     {
+//         int mid = start + (end - start) / 2;
+//         cout << "s -> " << start << " e -> " << end << " m -> " << mid
+//              << endl;
+//         // ✅ if mid-1 is out of bound -> mid is 0
+//         // ✅ if mid+1 is out of bound -> mid is n-1
+//         if (mid == nums.size() - 1)
+//         {
+//             cout << "mid+1 is out of bound -> mid is n-1" << endl;
+//             return nums[0];
+//         };
+//         if ((mid == 0 || nums[mid - 1] < nums[mid]) &&
+//             nums[mid] > nums[mid + 1])
+//         {
+//             cout << "returning " << mid + 1 << endl;
+//             return nums[mid + 1];
+//         };
+//         if (nums[mid] >= nums[0])
+//         {
+//             start = mid + 1;
+//         }
+//         else
+//         {
+//             end = mid - 1;
+//         };
+//     };
+//     cout << "s -> " << start << " e -> " << end << endl;
+//     return -1;
+// }
 
 int main()
 {
@@ -62,7 +110,7 @@ int main()
     // vector<int> nums = {4, 1, 2, 3};
     // vector<int> nums = {3, 1, 2};
     vector<int> nums = {2, 1};
-    
+
     int minInd = findMin(nums);
     if (minInd != -1)
     {

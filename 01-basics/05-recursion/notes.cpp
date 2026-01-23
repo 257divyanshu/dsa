@@ -1,7 +1,101 @@
 // 📍 check if a string is palindrome
 #include <bits/stdc++.h>
 using namespace std;
-// bool isPalindrome
+// 🏆 approach 1 polished version
+// 📍 approach 1 polished version
+// - TC -> O(n)
+// - SC -> O(1)
+bool isPalindrome(string s)
+{
+    int start = 0;
+    int end = s.length() - 1;
+    while (start < end)
+    {
+        // 1. Move start forward if not alphanumeric
+        while (!isalnum(s[start]))
+        {
+            start++;
+            continue;
+        };
+        // 2. Move end backward if not alphanumeric
+        while (!isalnum(s[end]))
+        {
+            end--;
+            continue;
+        };
+        // cout << s[start] << " and " << s[end] << endl;
+        // 3. Compare characters
+        if (tolower(s[start]) != tolower(s[end]))
+        {
+            return false;
+        };
+        // 4. Update pointers after a successful match
+        start++;
+        end--;
+    };
+    return true;
+};
+// 📍 approach 2
+// - TC -> O(n)
+// - SC -> O(n)
+// - where n is the length of the string s
+// bool isPalindrome(string s)
+// {
+//     string updatedString = "";
+//     for (int i = 0; i < s.length(); i++) // O(n)
+//     {
+//         if ((s[i] >= 'a' && s[i] <= 'z') || (s[i] >= 'A' && s[i] <= 'Z') ||
+//             (s[i] >= '0' && s[i] <= '9'))
+//         {
+//             updatedString += tolower(s[i]); // 📝 appending a character is ammortized constant time operation (O(1)) 
+//         };
+//     };
+//     int start = 0;
+//     int end = updatedString.length() - 1;
+//     while (start <= end) // O(n/2)
+//     {
+//         // cout << updatedString[start] << " and " << updatedString[end] << endl;
+//         if (updatedString[start] != updatedString[end])
+//         {
+//             return false;
+//         };
+//         start++;
+//         end--;
+//     };
+//     return true;
+// };
+// 📍 approach 1
+// - TC -> O(n)
+// - SC -> O(1)
+// - where n is the length of the string s
+// bool isPalindrome(string s)
+// {
+//     int start = 0;
+//     int end = s.length() - 1;
+//     while (start <= end) // O(n/2)
+//     {
+//         while (start <= end && !(s[start] >= 'a' && s[start] <= 'z') &&
+//                !(s[start] >= 'A' && s[start] <= 'Z') &&
+//                !(s[start] >= '0' && s[start] <= '9'))
+//         {
+//             start++;
+//         };
+//         while (start <= end && !(s[end] >= 'a' && s[end] <= 'z') &&
+//                !(s[end] >= 'A' && s[end] <= 'Z') &&
+//                !(s[end] >= '0' && s[end] <= '9'))
+//         {
+//             end--;
+//         };
+//         // cout << s[start] << " and " << s[end] << endl;
+//         if (start <= end && (tolower(s[start]) != tolower(s[end])))
+//         {
+//             return false;
+//         };
+//         start++;
+//         end--;
+//     };
+//     return true;
+// };
 int main()
 {
     string lordName = "Shri Krishna";
