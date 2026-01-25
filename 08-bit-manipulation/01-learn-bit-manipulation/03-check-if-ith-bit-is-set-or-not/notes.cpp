@@ -7,17 +7,17 @@ using namespace std;
 bool checkNthBit (int num, int n){
     // 📍 using left shift operator
     // num = 13, n = 2
-    // 13 -> 1101
+    // 13 -> 1101b
     // 2nd bit is 0
-    // do 1 << 1 -> 10
-    // do 1101 & 10
+    // do 1 << 1 -> 10b
+    // do 1101b & 10b
     // return ((num & (1 << n-1)) != 0);
     // 📍 using right shift operator
     // num = 13, n = 2
-    // 13 -> 1101
+    // 13 -> 1101b
     // 2nd bit is 0
-    // do 13 >> 1 -> 110
-    // do 110 & 1
+    // do 13 >> 1 -> 110b
+    // do 110b & 1b
     return (((num >> (n-1)) & 1) != 0);
 };
 int main()
