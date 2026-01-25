@@ -25,7 +25,7 @@ int lowerBound(vector<int> vect, int x)
         //     end = mid - 1;
         // };
         // 📍 right approach :
-        // - this will not return -1 for all the targets that are not present in the array
+        // - this will prevent -1 from being retruned, for all the targets that are not present in the array
         else
         {
             result = mid;
@@ -59,6 +59,8 @@ int main()
         // cout << "upper bound of " << i << " -> " << upperBound(vect, i) << endl;
         // cout << "lower bound of " << i << " -> " << (lower_bound(vect.begin(), vect.end(), i) - vect.begin()) << endl;
         // cout << "upper bound of " << i << " -> " << (upper_bound(vect.begin(), vect.end(), i) - vect.begin()) << endl;
+        // 📝 lower bound of element < mini = 0th index
+        // 📝 lower bound of element > maxi = nth index (hypothetical)
     }
 
     return 0;

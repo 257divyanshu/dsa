@@ -43,9 +43,11 @@ int main()
     for (int i = 0; i <= 8; i++)
     {
         // cout << "lower bound of " << i << " -> " << lowerBound(vect, i) << endl;
-        cout << "upper bound of " << i << " -> " << upperBound(vect, i) << endl;
+        // cout << "upper bound of " << i << " -> " << upperBound(vect, i) << endl;
         // cout << "lower bound of " << i << " -> " << (lower_bound(vect.begin(), vect.end(), i) - vect.begin()) << endl;
-        // cout << "upper bound of " << i << " -> " << (upper_bound(vect.begin(), vect.end(), i) - vect.begin()) << endl;
+        cout << "upper bound of " << i << " -> " << (upper_bound(vect.begin(), vect.end(), i) - vect.begin()) << endl;
+        // 📝 upper bound of element < mini = 0th index
+        // 📝 upper bound of element > maxi = nth index (hypothetical)
     }
 
     return 0;

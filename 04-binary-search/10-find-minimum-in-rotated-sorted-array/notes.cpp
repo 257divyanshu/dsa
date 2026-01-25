@@ -32,9 +32,9 @@ int findMin(vector<int> &nums)
         }
         else
         { // right part is sorted
-            if (nums[start] < minElem)
+            if (nums[mid] < minElem)
             {
-                minElem = nums[start];
+                minElem = nums[mid];
             };
             end = mid - 1;
         }

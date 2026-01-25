@@ -1,6 +1,9 @@
 #include <bits/stdc++.h>
 using namespace std;
 
+// - the question wants us to implement lower bound
+
+// 📍 approach
 int searchInsert(vector<int> &nums, int target)
 {
     int result = nums.size();

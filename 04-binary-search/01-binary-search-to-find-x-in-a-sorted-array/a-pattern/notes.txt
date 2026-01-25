@@ -1,3 +1,3 @@
 circled integer : mid
-upperlined integer : start = mid != end
+overlined integer : start = mid != end
 underlined integer : start = mid = end
