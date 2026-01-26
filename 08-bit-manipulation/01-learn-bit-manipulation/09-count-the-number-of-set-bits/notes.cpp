@@ -2,6 +2,8 @@
 using namespace std;
 
 // 📍 polished version of my approach
+// TC -> O(number of set bits) (O(31) in the worst case)
+// SC -> O(1)
 int countSetBits(int num){
     int setBitCount = 0;
     unsigned int n = (unsigned int)num;

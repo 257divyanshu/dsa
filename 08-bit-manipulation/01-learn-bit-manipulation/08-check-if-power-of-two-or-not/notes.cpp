@@ -33,6 +33,8 @@ int main()
     // cout << (-2 ^ -1) << endl; // 1
     // cout << (-4 ^ -3) << endl; // 1
     // cout << (-8 ^ -7) << endl; // 1
-    cout << (-3 ^ -2) << endl; // 3
+    // cout << (-3 ^ -2) << endl; // 3
+
+    cout << bitset<32>(INT32_MIN) << endl; // 10000000000000000000000000000000
     return 0;
 };

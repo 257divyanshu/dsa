@@ -1,6 +1,17 @@
 #include <bits/stdc++.h>
 using namespace std;
 
+// 📍 INTUTION
+// - the question is similar to the previous one SEARCH IN ROTATED SORTED 1
+// - the previous question has unique elements, but this question has duplicate elements as well
+// - the logic of the previous question can be used here
+// - the only case which needs to be handled explicitly is nums[start] == nums[mid] && nums[mid] == nums[end]
+// - because when nums[start] == nums[mid] && nums[mid] == nums[end], we cannot find which part is sorted
+// - see 📸 image01-edge-case.png
+
+// 📍 bug encountered while solving (LEARNT AFTER WRONG SUBMISSION ON LEETCODE)
+// - if we do explicit handling for nums[start] == nums[end], then cases like [1,2,1] will fail
+
 // 📍 optimal approach
 // - TC -> O(log2(n)) (average case)
 // - TC -> O(n/2) (worst case)
