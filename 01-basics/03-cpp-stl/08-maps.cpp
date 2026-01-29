@@ -23,7 +23,7 @@ int main()
     // }
     // 📍 find() 
     // - returns an iterator pointing to the provided key
-    // - if the specified key doesn't exists, it returns an iterator pointing to map1.end()
+    // - if the specified key doesn't exist, it returns an iterator pointing to map1.end()
     map<int,int> map1;
     map1[1] = 11;
     map1[2] = 12;

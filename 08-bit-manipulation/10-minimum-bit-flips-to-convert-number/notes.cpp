@@ -1,7 +1,7 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-// - if we don't use BRIAN KERNIGHAN'S ALGORITHM, and simply traverse all the bits one by one, to get the number of set bits in xorResult, then TC -> log2(start^goal)
+// - if we don't use BRIAN KERNIGHAN'S ALGORITHM, and simply traverse all the bits of the xorResult one by one, to get the minimum number of bit flips, then TC -> log2(start^goal)
 
 // 📍 sir's approach
 // - TC -> O(1) (O(32) more precisely)
