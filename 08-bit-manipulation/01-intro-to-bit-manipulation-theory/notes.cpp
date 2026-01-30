@@ -1,3 +1,16 @@
+// 📍 right shifting INT32_MIN by 1
+#include <bits/stdc++.h>
+using namespace std;
+int main()
+{
+    cout << (INT32_MIN) << endl; // -2147483648
+    cout << bitset<32>(INT32_MIN) << endl; // 10000000000000000000000000000000
+    cout << (INT32_MIN >> 1) << endl; // -1073741824
+    cout << bitset<32>(INT32_MIN >> 1) << endl; // 11000000000000000000000000000000
+    // 📝 right shifting a negative number fills with 1s instead of 0s
+    return 0;
+};
+
 // 📍 left shifting INT32_MAX by 1
 // #include <bits/stdc++.h>
 // using namespace std;
@@ -62,14 +75,14 @@
 //   ->  -6 -> 11111111111111111111111111111010
 //   -> ~-6 -> 00000000000000000000000000000101
 //   -> result : 5
-#include <bits/stdc++.h>
-using namespace std;
-int main()
-{
-    cout << ~ 5 << endl; // -6
-    cout << ~ (-6) << endl; // 5
-    return 0;
-};
+// #include <bits/stdc++.h>
+// using namespace std;
+// int main()
+// {
+//     cout << ~ 5 << endl; // -6
+//     cout << ~ (-6) << endl; // 5
+//     return 0;
+// };
 
 // 📝 storing a negative integer
 // - suppose the number if -13
