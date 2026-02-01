@@ -10,44 +10,76 @@ long long customExponentiation(int a, int b)
     return result;
 };
 
+// 🟨 optimal approach pending
+
+// 📍 better approach (sir's approach)
+// - TC -> O(n * log(n))
+// - SC -> O(1)
+// 📍 why is this better despite of O(n * log(n)) TC
+// - previous (bruteforce) solution had a TC of O(n * 32)
+// - this solution has a TC of O(n * log(n))
+// - for O(n * log(n)) to be equal to O(n * 32), n should be 2 raised to 32
+// - but the constraint is : 1 <= nums.length <= 3 * 10^4
+// - for n's max value can be 30000
+// - and log(30000) base 2 = 14.87
+// int singleNumber(vector<int> &nums)
+// {
+//     int n = nums.size();
+//     if (n == 1)
+//     {
+//         return nums[0];
+//     };
+//     sort(nums.begin(), nums.end());
+//     int i = 1;
+//     while (i < n)
+//     {
+//         if (nums[i] != nums[i - 1])
+//         {
+//             return nums[i - 1];
+//         };
+//         i += 3;
+//     };
+//     return nums[n - 1];
+// };
+
 // 📍 bruteforce approach (sir's approach)
-class Solution
-{
-public:
-    int singleNumber(vector<int> &nums)
-    {
-        int result = 0;
-        for (int i = 0; i <= 31; i++)
-        {
-            // cout << " i : " << i << endl;
-            // cout << "current multiplier : " << multiplier << endl;
-            int bitSum = 0;
-            for (int j = 0; j < nums.size(); j++)
-            {
-                // cout << " j : " << j << endl;
-                // cout << "adding " << ((nums[j] >> i) & 1) << " to bitSum" <<
-                // endl;
-                if (nums[j] & (1 << i))
-                {
-                    bitSum++;
-                };
-            };
-            // cout << "bitSum : " << bitSum << endl;
-            if (bitSum % 3 == 1)
-            {
-                result = result | (1 << i);
-                // cout << "current multiplier : " << multiplier << endl;
-                // cout << "result updated : " << result << endl;
-            };
-        };
-        // cout << "final result : " << result << endl;
-        return result;
-    };
-};
+// - TC -> O(n)
+// - SC -> O(1)
+// int singleNumber(vector<int> &nums)
+// {
+//     int result = 0;
+//     for (int i = 0; i <= 31; i++)
+//     {
+//         // cout << " i : " << i << endl;
+//         // cout << "current multiplier : " << multiplier << endl;
+//         int bitSum = 0;
+//         for (int j = 0; j < nums.size(); j++)
+//         {
+//             // cout << " j : " << j << endl;
+//             // cout << "adding " << ((nums[j] >> i) & 1) << " to bitSum" <<
+//             // endl;
+//             if (nums[j] & (1 << i))
+//             {
+//                 bitSum++;
+//             };
+//         };
+//         // cout << "bitSum : " << bitSum << endl;
+//         if (bitSum % 3 == 1)
+//         {
+//             result = result | (1 << i);
+//             // cout << "current multiplier : " << multiplier << endl;
+//             // cout << "result updated : " << result << endl;
+//         };
+//     };
+//     // cout << "final result : " << result << endl;
+//     return result;
+// };
 
 // 💡 hint 1
 // - If you sum up all the 1s at that specific bit position for every number in the array, what pattern or property would that sum have, considering every number appears exactly three times (except one)?
 // 📍 my first approach
+// - TC -> O(n)
+// - SC -> O(1)
 // int singleNumber(vector<int> &nums)
 // {
 //     long long result = 0;
