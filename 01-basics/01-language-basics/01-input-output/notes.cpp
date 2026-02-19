@@ -24,7 +24,7 @@
 // }
 
 // 📍 Taking User Input with cin
-// - in is used to take input from the user.
+// - cin is used to take input from the user.
 // #include<iostream>
 // using namespace std;
 // int main() {
@@ -36,7 +36,7 @@
 // }
 
 // 📍 Using namespace std
-// - Writing using namespace std; removes the need to prefix std::. This makes code cleaner but can cause naming conflicts in large projects.
+// - Writing 'using namespace std;' removes the need to prefix std::. This makes code cleaner but can cause naming conflicts in large projects.
 // #include<iostream>
 // using namespace std;
 // int main() {
@@ -85,5 +85,5 @@
 
 // Inputs and outputs are handled using streams in C++.
 // Libraries provide pre-built functions and tools.
-// #include<iostream> → used for input/output
-// #include<math.h> → used for mathematical functions.
+// iostream header → used for input/output
+// math.h header → used for mathematical functions.

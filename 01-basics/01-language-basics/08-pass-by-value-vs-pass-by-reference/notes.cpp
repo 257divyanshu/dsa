@@ -1,7 +1,7 @@
 // 📍 pass by reference
 // - When a variable is passed by reference, the function receives the actual variable (not a copy). Any changes made inside the function will reflect on the original.
 // - The function receives the original memory address
-// - Useful when you want to update multiple variables or return multiple values
+// - Useful when we want to update multiple variables or return multiple values
 // 📍 demonstration
 // #include <iostream>
 // using namespace std;

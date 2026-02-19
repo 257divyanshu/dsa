@@ -40,5 +40,5 @@ int main()
 // }
 
 // 📍 for loop
-// - A for loop is a control structure in programming that allows you to execute a specific block of code repeatedly.
+// - A for loop is a control structure in programming that allows us to execute a specific block of code repeatedly.
 // - A control structure is a block of code that dictates the flow of execution of the program.

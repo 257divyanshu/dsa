@@ -45,7 +45,7 @@ bool isArmstrong(int n)
     return sumOfPowers == n;
 }
 
-// 📍 approach 2 (using integer math)
+// 📍 approach 2 (using integer math for calculating power)
 // TC -> O ( ( log10 ( n ) ) ^ 2 )
 // SC -> O(1)
 // int power(int base, int exp)

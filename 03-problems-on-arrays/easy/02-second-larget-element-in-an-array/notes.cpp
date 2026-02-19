@@ -25,6 +25,7 @@ int secondLargestElement(vector<int> vect)
 {
     int largest = vect[0];
     int secondLargest = INT32_MIN;
+    // 📝 setting secondLarget = vect[0]; will give wrong answer (e.g. test case vect = {3,2})
     for (int i = 1; i < vect.size(); i++)
     {
         if (vect[i] > largest)

@@ -11,7 +11,7 @@ using namespace std;
 // }
 
 // 📍 approach 1 
-// - TC -> O(log(n))
+// - TC -> O(n)
 int largestElement (vector<int> vect){
     int largest = INT32_MIN;
     for(int i = 0; i < vect.size(); i++){

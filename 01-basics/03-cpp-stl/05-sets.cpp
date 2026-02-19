@@ -33,13 +33,21 @@ int main()
     // - to erase a range of values (using iterators)
     // auto it2 = s1.find(2);
     // auto it5 = s1.find(5);
-    // s1.erase(it2, it5); // will delete 2, 4 and 5
+    // for(auto elem : s1){
+    //     cout << elem << " ";
+    // }
+    // cout << endl;
+    // s1.erase(it2, it5); // will delete 2 and 4
+    // for(auto elem : s1){
+    //     cout << elem << " ";
+    // }
+    // cout << endl;
     // 📍 count()
-    set<int> s1;
-    s1.emplace(3);
-    s1.insert(2);
-    s1.insert(4);
-    cout<<s1.count(2)<<endl; // 1
+    // set<int> s1;
+    // s1.emplace(3);
+    // s1.insert(2);
+    // s1.insert(4);
+    // cout<<s1.count(2)<<endl; // 1
     // 📍 lower_bound() and upper_bound()
     // 🟨 pending
 };

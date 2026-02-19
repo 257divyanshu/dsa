@@ -96,12 +96,12 @@ bool isPalindrome(string s)
 //     };
 //     return true;
 // };
-int main()
-{
-    string lordName = "Shri Krishna";
-    cout << lordName.length() << endl;
-    return 0;
-};
+// int main()
+// {
+//     string lordName = "Shri Krishna";
+//     cout << lordName.length() << endl;
+//     return 0;
+// };
 
 // 📍 reverse an array
 // #include <bits/stdc++.h>
@@ -194,7 +194,7 @@ int main()
 // using namespace std;
 // void printNTo1(int n, int i)
 // {
-//     if (i > 5)
+//     if (i > n)
 //     {
 //         // cout << "done" << endl;
 //         return;
@@ -258,13 +258,6 @@ int main()
 //     // };
 //     // printNTo1(n, i+1);
 //     // cout << i << endl;
-//     // 📍 my approach 4
-//     // if (i > n)
-//     // {
-//     //     return;
-//     // };
-//     // printNTo1(n, i+1);
-//     // cout << i << endl;
 // };
 // int main()
 // {
@@ -273,8 +266,6 @@ int main()
 //     // 📍 my approach 2
 //     printNTo1(5, 5);
 //     // 📍 my approach 3
-//     // printNTo1(5, 1);
-//     // 📍 my approach 4
 //     // printNTo1(5, 1);
 //     return 0;
 // };

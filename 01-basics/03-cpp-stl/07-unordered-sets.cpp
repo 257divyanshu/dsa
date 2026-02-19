@@ -8,6 +8,10 @@ int main()
     uset1.emplace(3);
     uset1.emplace(4);
     uset1.emplace(1);
+    for(auto elem : uset1){
+        cout << elem << " ";
+    }
+    cout << endl;
     return 0;
 };
 
@@ -18,4 +22,4 @@ int main()
 
 // 📍 unordered sets
 // - stores unique elements
-// - but not in sorted manner 
+// - but not in sorted manner

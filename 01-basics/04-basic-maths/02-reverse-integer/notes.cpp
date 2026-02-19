@@ -8,7 +8,7 @@ using namespace std;
 // - one is addition (of the lastDigit)
 // - second is multiplication (of 10 with the reversedNumber)
 // - out of these two operations, the second operation (reversedNumber * 10) is the one that can cause the value to go outisde the signed 32-bit integer range
-// - so before we performe the (reversedNumber * 10) operation, we need to check if doing so causes the value to go outisde the signed 32-bit integer range
+// - so before we perform the (reversedNumber * 10) operation, we need to check if doing so causes the value to go outisde the signed 32-bit integer range
 // - if doing so causes the value to go outisde the signed 32-bit integer range, we should return 0 (because the question demands so) 
 // 📍 approach 
 // - TC -> O(log10(n))

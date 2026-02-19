@@ -1,5 +1,5 @@
 📍 shallow copy vs deep copy
-- Shallow Copy (Pointer/Reference): If you just copied the "address" (like a shortcut on your desktop), both variables would point to the exact same data. If you changed one, the other would change too. This happens with C-style strings (char*).
+- Shallow Copy (Pointer/Reference): If we just copied the "address" (like a shortcut on your desktop), both variables would point to the exact same data. If we changed one, the other would change too. This happens with C-style strings (char*).
 - Deep Copy (std::string): The two variables become completely independent. Modifying the copy has zero effect on the original.
 
 🔬 Assigning one string to another makes a deep copy of the character sequence

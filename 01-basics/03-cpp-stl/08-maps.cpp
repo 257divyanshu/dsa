@@ -12,7 +12,7 @@ int main()
     // map1.emplace(3,13); // valid
     // // map1.emplace({3,13}); // invalid
     // map1.insert({4,14});
-    // 📍 iteratoring over a map
+    // 📍 iterating over a map
     // map<int,int> map1;
     // map1[1] = 11;
     // map1[2] = 12;
