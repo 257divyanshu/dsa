@@ -11,6 +11,9 @@ bool areNumbersAscending(string s)
     // Extract space-separated words one by one
     while (ss >> word)
     {
+
+        cout << word << endl;
+
         // Check if the word is a number (checking the first character is enough)
         if (isdigit(word[0]))
         {
@@ -71,6 +74,7 @@ bool areNumbersAscending(string s)
 
 int main()
 {
-
+    string s = "hello world 5 x 5";
+    cout << areNumbersAscending(s) << endl;
     return 0;
 };
