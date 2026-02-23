@@ -2,23 +2,29 @@
 using namespace std;
 
 // 📍 bruteforce approach
-// - TC -> O(n+k)
-// - SC -> O(n) (more precisely : O(k))
+// - TC -> O(2n-k)
+// - SC -> O(n-k)
 void rotate(vector<int> &nums, int k)
 {
     int n = nums.size();
     k = k % n;
-    k = n - k;
-    vector<int> temp(0);
-    for(int i = 0; i < k; i++){ // O(k)
+    vector<int> temp(n-k,0);
+    cout << "starting the first loop" << endl;
+    for (int i = 0; i < n - k; i++)
+    { // O(n-k)
         temp[i] = nums[i];
     };
-    for(int i = k; i < n; i++){ // O(n - k)
-        nums[i-k] = nums[k];
+    cout << "loop one done" << endl;
+    for (int i = n - k; i < n; i++)
+    { // O(k)
+        nums[i - n + k] = nums[i];
     };
-    for(int i = n - k; i < n; i++){ // O (k)
-        nums[i] = temp[i - n + k];
+    cout << "loop two done" << endl;
+    for (int i = k; i < n; i++)
+    { // O (n-k)
+        nums[i] = temp[i - k];
     };
+    cout << "loop three done" << endl;
 };
 
 // 📍 optimal approach
@@ -35,6 +41,13 @@ void rotate(vector<int> &nums, int k)
 
 int main()
 {
-
+    vector<int> nums {1,2,3,4,5,6,7};
+    int k = 3;
+    cout << "starting" << endl;
+    rotate(nums,k);
+    for(auto num : nums){
+        cout << num << endl;
+    }
+    cout << "ending" << endl;
     return 0;
 };

@@ -13,7 +13,7 @@ int removeDuplicates(vector<int> &nums)
     int i = 0;
     int j = 0;
     // while (i < n && j < n)
-    while (j < n) // 📍 the i < n check is redundant
+    while (j < n) // 📍 there's no need for i<n check (because i won't go out of bound)
     {
         if (nums[i] != nums[j])
         {
