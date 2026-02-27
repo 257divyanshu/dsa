@@ -1,9 +1,7 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-// 🏆 approach 2
-
-// 📍 approach 1 (bruteforce)
+// 📍 bruteforce approach
 // - TC -> O(n * log(n)) (more precisely : O(n * log(n) + n))
 // int secondLargestElement (vector<int> vect) {
 //     int n = vect.size();
@@ -19,7 +17,7 @@ using namespace std;
 //     return secondLargest;
 // };
 
-// 📍 approach 2 (optimal)
+// 📍 optimal approach
 // - TC -> O(n)
 int secondLargestElement(vector<int> vect)
 {

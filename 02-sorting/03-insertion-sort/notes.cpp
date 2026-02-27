@@ -22,7 +22,7 @@ int insertionSort(vector<int> &vect)
     for (int i = 0; i < vect.size(); i++)
     {
         int j = i;
-        // 📍 second approach
+        // 📍 second approach (better)
         while (j > 0 && (vect[j - 1] > vect[j]))
         {
             swap(vect[j - 1], vect[j]);
@@ -84,4 +84,4 @@ int main()
 // - 6, 8, 9, 12, 14, 15, (13)
 // - 6, 8, 9, 12, 13, 14, 15
 
-// 📍 insertion sort : take an element and places in its correct position
+// 📍 insertion sort : take an element and place it in its correct position

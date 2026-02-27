@@ -1,16 +1,14 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-// 🏆 approach 1
-
-// 📍 approach 2
+// 📍 bruteforce approach
 // - TC -> O(n * log(n))
 // int largestElement (vector<int> vect){
 //     sort(vect.begin(), vect.end());
 //     return vect[vect.size() - 1];
 // }
 
-// 📍 approach 1 
+// 📍 optimal approach 
 // - TC -> O(n)
 int largestElement (vector<int> vect){
     int largest = INT32_MIN;

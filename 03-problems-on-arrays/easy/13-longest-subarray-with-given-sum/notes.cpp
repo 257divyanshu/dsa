@@ -4,7 +4,7 @@ using namespace std;
 // 📍 subarray
 // - is a contiguous part of an array
 
-// 📍 optimal approach
+// 📍 optimal approach (if vect has positives only)
 // - TC -> O(n) (O(2*n) in worst case)
 // - SC -> O(1)
 int longestSubarrayWithSumK(vector<int> vect, long long k)
@@ -38,6 +38,7 @@ int longestSubarrayWithSumK(vector<int> vect, long long k)
                 currentSum -= vect[i];
                 i++;
             }
+            cout << "updated i = " << i << endl;
             if (currentSum == k)
             {
                 int currSubarrayLength = j - i + 1;
@@ -70,6 +71,7 @@ int longestSubarrayWithSumK(vector<int> vect, long long k)
 //         // 📍 if the array has only positives:
 //         // hashMap[currSum] = i; // 📍 sir placed it here
 //         // 📍 if the arrays has 0s and negatives as well
+//         // e.g. EDGE CASE : {10, 0, 5, 2, 7, 1} 
 //         if(hashMap.find(currSum) == hashMap.end()){
 //             hashMap[currSum] = i;
 //         }
@@ -131,8 +133,8 @@ int longestSubarrayWithSumK(vector<int> vect, long long k)
 int main()
 {
 
-    // vector<int> vect = {1,2,3,1,1,1,1,4,2,3};
-    // int k = 3;
+    vector<int> vect = {1,2,3,1,1,1,1,4,2,3};
+    int k = 3;
     // 1 + 2 = 3
     // 1 + 1 + 1 = 3
     // 1 + 1 + 1 = 3
@@ -140,8 +142,8 @@ int main()
     // vector<int> vect = {10, 5, 2, 7, 1, 9};
     // int k = 15;
 
-    vector<int> vect = {1, 2, 3, 1, 1, 1, 1, 3, 3};
-    int k = 6;
+    // vector<int> vect = {1, 2, 3, 1, 1, 1, 1, 3, 3};
+    // int k = 6;
 
     // 1️⃣ returning the longestSubarray
     // vector<int> result = longestSubarrayWithSumK(vect, k);

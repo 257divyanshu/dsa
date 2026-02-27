@@ -1,9 +1,7 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-// 🏆 approach 3
-
-// 📍 approach 3 (optimal method)
+// 📍 optimal method
 // - two pointer approach
 // - TC -> O(n)
 // - SC -> O(1)
@@ -25,7 +23,7 @@ int removeDuplicates(vector<int> &nums)
     return i + 1;
 };
 
-// 📍 approach 2 (bruteforce method)
+// 📍 bruteforce method
 // - TC -> O( ( n * log(n) ) + n )
 // - SC -> O(n)
 // - we can use unordered_set here
@@ -43,7 +41,7 @@ int removeDuplicates(vector<int> &nums)
 //     return index;
 // };
 
-// 📍 approach 1 (better method)
+// 📍 better method
 // - TC -> O(n) (more precisely : O(2n))
 // - SC -> O(n)
 // int removeDuplicates(vector<int> &nums)
