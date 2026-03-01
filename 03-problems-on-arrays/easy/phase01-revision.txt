@@ -1,0 +1,6 @@
+02 second largest element in an array
+04 remove duplicates from sorted array
+07 move zeroes to the end
+09 union and intersection of two sorted arrays
+11 max consecutive ones
+13 longest subarray with given sum

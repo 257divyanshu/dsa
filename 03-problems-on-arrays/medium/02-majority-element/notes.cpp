@@ -13,22 +13,29 @@ int majorityElement(vector<int> &nums) {
     int candidate = 0;
     int count = 0;
     for (int num : nums) {
+        cout << "num is : " << num << endl;
+        cout << "candidate is : " << candidate << endl;
+        cout << "count is : " << count << endl;
         // 1. If count is 0, we must pick a new candidate
         if (count == 0) {
             candidate = num;
+            cout << "cout == 0; update candidate to " << num << endl;
         }
         // 2. If current number matches candidate, increment count
         // Otherwise, decrement count
         if (num == candidate) {
             count++;
+            cout << "incrementing count to " << count << endl;
         } else {
             count--;
+            cout << "decrementing count to " << count << endl;
         }
     }
     return candidate;
 }
 
 // 📍 better approach (using additional data structure)
+// - hash the frequencies of the elements using a map data structure and then iterate over the map data structure to find the majority element
 // - if using a map : TC -> O(n * log(m)) (more precisely : O(n * log(m)) + m) (where m is the size of the map) 
 // - if using an unordered_map : TC -> O(n) (more precisely : O(n + m) (where m is the size of the unordered_map) 
 // - SC -> O(m) (where m is the size of the map/unordered_map)
@@ -43,11 +50,13 @@ int majorityElement(vector<int> &nums) {
 int main()
 {
     // 📍 a nice testcase
-    // vector<int> vect = {2,2,1,1,1,2,2};
+    vector<int> vect = {2,2,1,1,1,2,2};
 
     // 📍 striver's testcase
-    vector<int> vect = {7,7,5,7,5,1,5,7,5,5,7,7,5,5,5,5};
-    cout << vect.size() << endl;
+    // vector<int> vect = {7,7,5,7,5,1,5,7,5,5,7,7,5,5,5,5};
+    // cout << vect.size() << endl;
+
+    cout << majorityElement(vect) << endl;
 
     return 0;
 };

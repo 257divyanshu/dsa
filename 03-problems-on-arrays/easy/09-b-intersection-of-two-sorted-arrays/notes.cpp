@@ -23,7 +23,8 @@ using namespace std;
 //     return resultantArray;
 // }
 
-// 📍 optimal approach (two pointers)
+// 📍 optimal approach
+// - two pointer approach
 // - TC -> O(n1 + n2)
 // - TC's worst case scenario
 //   - vect1 = {1,3,5,7,9,11}
@@ -43,7 +44,7 @@ vector<int> intersectionOfTwoSortedArrays(vector<int> vect1, vector<int> vect2){
             // if(resultantArray.empty() || resultantArray.back() != vect1[i]){
             //     resultantArray.push_back(vect1[i]);
             // }
-            // 📍 if intersection array should contain one representatives of each pair
+            // 📍 if intersection array should contain one representative of each pair
             resultantArray.push_back(vect1[i]);
             //
             j++;

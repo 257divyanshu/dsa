@@ -30,6 +30,7 @@ using namespace std;
 // };
 
 // 📍 optimal approach
+// - two pointer approach
 // - TC -> O(n)
 // - SC -> O(1)
 void moveZeroes(vector<int> &nums)

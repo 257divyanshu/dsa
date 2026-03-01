@@ -1,7 +1,8 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-// 📍 optimal approach (two pointers)
+// 📍 optimal approach
+// - two pointer approach
 // - TC -> O(m+n)
 // - SC -> O(m+n)
 vector<int> unionOfTwoSortedArrays(vector<int> vect1, vector<int> vect2)

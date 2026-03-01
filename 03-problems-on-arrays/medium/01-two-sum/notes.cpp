@@ -4,26 +4,26 @@ using namespace std;
 // 📍 optimal approach (using unordered_map) (without sorting)
 // - TC -> O(n)
 // - SC -> O(n)
-// vector<int> twoSum(vector<int> &nums, int target)
-// {
-//     vector<int> indices(0);
-//     unordered_map<int, int> indexMap;
-//     for (int i = 0; i < nums.size(); i++)
-//     {
-//         auto it = indexMap.find(target - nums[i]);
-//         if (it != indexMap.end())
-//         {
-//             indices.push_back(it->second);
-//             indices.push_back(i);
-//             return indices;
-//         }
-//         else
-//         {
-//             indexMap[nums[i]] = i;
-//         };
-//     }
-//     return indices;
-// }
+vector<int> twoSum(vector<int> &nums, int target)
+{
+    vector<int> indices(0);
+    unordered_map<int, int> indexMap;
+    for (int i = 0; i < nums.size(); i++)
+    {
+        auto it = indexMap.find(target - nums[i]);
+        if (it != indexMap.end())
+        {
+            indices.push_back(it->second);
+            indices.push_back(i);
+            return indices;
+        }
+        else
+        {
+            indexMap[nums[i]] = i;
+        };
+    }
+    return indices;
+}
 
 // 📍 better approach v2 (mine) (using unordered_map) (with sorting)
 // - TC -> O(n * log(n))

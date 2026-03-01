@@ -38,28 +38,6 @@ int maxSubArray(vector<int> &nums)
 //     int currentSum = 0;
 //     for (int i = 0; i < nums.size(); i++)
 //     {
-//         // 📍 iteration 1
-//         // ⚠️ fails at [1,2]
-//         // if (nums[i] > currentSum)
-//         // {
-//         //     currentSum = nums[i];
-//         // }
-//         // else
-//         // {
-//         //     currentSum += nums[i];
-//         // }
-//         // maximumSum = max(currentSum, maximumSum);
-//         // 📍 iteration 2
-//         // if (currentSum < 0 && nums[i] > currentSum)
-//         // {
-//         //     currentSum = nums[i];
-//         // }
-//         // else
-//         // {
-//         //     currentSum += nums[i];
-//         // }
-//         // maximumSum = max(currentSum, maximumSum);
-//         // 📍 optimal iteration
 //         currentSum += nums[i];
 //         if(currentSum > maximumSum){
 //             maximumSum = currentSum;
