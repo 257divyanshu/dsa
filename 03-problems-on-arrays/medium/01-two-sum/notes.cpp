@@ -160,6 +160,6 @@ vector<int> twoSum(vector<int> &nums, int target)
 
 int main()
 {
-
+    // test case :  [-6, 7, 1, -7, 6, 2], target = 3
     return 0;
 };

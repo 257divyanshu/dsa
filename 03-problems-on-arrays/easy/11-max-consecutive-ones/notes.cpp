@@ -30,6 +30,6 @@ int findMaxConsecutiveOnes(vector<int> &nums)
 
 int main()
 {
-
+    // test case : [1, 0, 1, 1, 1, 0, 1, 1, 1]
     return 0;
 };
