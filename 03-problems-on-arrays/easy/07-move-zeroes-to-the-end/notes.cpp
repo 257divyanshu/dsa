@@ -2,6 +2,7 @@
 using namespace std;
 
 // 📍 bruteforce approach
+// - create an array of non-zero elements and then modify the original array so that the initial elements are the non-zero elements
 //  TC -> O(n) (more precisely : O(2n))
 //  SC -> O(n)
 // void moveZeroes(vector<int> &nums)

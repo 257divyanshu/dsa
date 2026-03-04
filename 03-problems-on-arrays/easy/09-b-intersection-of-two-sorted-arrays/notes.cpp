@@ -2,6 +2,8 @@
 using namespace std;
 
 // 📍 bruteforce approach
+// - for every element in the first array, we'll try to find a partner in the second array
+// - because we want one representative from each such pair, we need to make sure that an element in the second array doesn't get paired up with more than one element, to do so we maintain a pairedUp state for the second array
 // - TC -> O(n1 * n2)
 // - SC -> O(n2 + x) (x for storing the answer, and not for solving the problem)
 // vector<int> intersectionOfTwoSortedArrays(vector<int> vect1, vector<int> vect2)

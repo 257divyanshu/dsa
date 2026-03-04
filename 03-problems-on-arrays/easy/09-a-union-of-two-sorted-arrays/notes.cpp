@@ -78,6 +78,7 @@ vector<int> unionOfTwoSortedArrays(vector<int> vect1, vector<int> vect2)
 };
 
 // 📍 bruteforce approach
+// - use a set data stucture to get the union of the two sorted arrays and then create an array from that set
 // TC -> O( n1*log(n) + n2*log(n) + (n1+n2))
 // SC -> O( (n1 + n2) + (n1 + n2) ) (one n1+n2 is for solving the problem (for resultantSet) and one n1+n2 is for returning the answer (for resultantArray))
 // vector<int> unionOfTwoSortedArrays(vector<int> vect1, vector<int> vect2)

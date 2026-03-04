@@ -9,7 +9,7 @@ int removeDuplicates(vector<int> &nums)
 {
     int n = nums.size();
     int i = 0;
-    int j = 0;
+    int j = 0; // or initialize it with 1
     // while (i < n && j < n)
     while (j < n) // 📍 there's no need for i<n check (because i won't go out of bound)
     {
@@ -24,6 +24,7 @@ int removeDuplicates(vector<int> &nums)
 };
 
 // 📍 bruteforce method
+// - create a set of unique elements and then modify the array so that initial elements are the unique ones
 // - TC -> O( ( n * log(n) ) + n )
 // - SC -> O(n)
 // - we can use unordered_set here
@@ -42,6 +43,7 @@ int removeDuplicates(vector<int> &nums)
 // };
 
 // 📍 better method
+// - create an array of unique elements and then modify the array so that initial elements are the unique ones
 // - TC -> O(n) (more precisely : O(2n))
 // - SC -> O(n)
 // int removeDuplicates(vector<int> &nums)
