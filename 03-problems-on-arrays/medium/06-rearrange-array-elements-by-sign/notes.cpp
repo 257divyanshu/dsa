@@ -4,6 +4,7 @@ using namespace std;
 // 📍 VARIATION : if its not guaranteed that the number of positives is equal to the number of negatives
 // 📍 approach (from bruteforce's intution)
 // - TC -> O(n) (O(2*n)) more precisely) (see 📸 time-complexity-analysis.png)
+// - so, worst case TC is O(2*n), best case TC is O((3*n)/2)
 // - SC -> O(n)
 vector<int> rearrangeArray(vector<int> &nums)
 {
@@ -153,6 +154,9 @@ vector<int> rearrangeArray(vector<int> &nums)
 
 int main()
 {
-
+    // 📍 test case (for the scenario when positiveCount == negativeCount)
+    // [3,1,-2,-5,2,-4]
+    // 📍 test case (for the scenario when positiveCount != negativeCount)
+    // [1,2,-4,-5,3,6]
     return 0;
 };

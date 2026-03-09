@@ -1,6 +1,8 @@
 #include <bits/stdc++.h>
 using namespace std;
 
+// 📍 see the latest three submissions of deeper information
+
 // 📍 sir's approach
 // int findPeakElement(vector<int> &nums)
 // {
