@@ -20,12 +20,14 @@ using namespace std;
 int func (int mid, int n, int m){
     long long product = 1;
     for(int i = 1; i<=n; i++){
-        product *= m;
+        product *= mid;
         if(product > m){
+            cout << "product = " << product << endl;
             return 1; // by returnnig 1 here, we prevent redundant calculation (which would otherwise be done) (there's no point of calculating the value of i*n, if (while doing that calculation) we encounter a number that is greater than m)
         };
     };
     if(product == m){
+        cout << "product = " << product << endl;
         return 0;
     };
     return -1;
@@ -35,9 +37,11 @@ int nthRoot(int n, int m){
     int end = m;
     while(start <= end){
         int mid = start + (end - start) / 2;
+        cout << "s = " << start << "; e = " << end << "; mid = " << mid << endl;
         int value = func(mid, n, m);
+        cout << "value = " << value << endl;
         if(value == 0){
-            return value;
+            return mid;
         }
         else if (value == -1){
             start = mid + 1;
@@ -107,6 +111,8 @@ int nthRoot(int n, int m){
 
 int main()
 {
-    
+    int n = 3;
+    int m = 27;
+    cout << nthRoot(n,m) << endl;
     return 0;
 };

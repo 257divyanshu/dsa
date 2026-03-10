@@ -1,9 +1,13 @@
 #include <bits/stdc++.h>
 using namespace std;
 
+
 // 📝 NOTE
 // - this question comes under the BINARY SEARCH ON ANSWERS concept
 // - if in a question, we are sure about the answer's range and we are asked to find minimum possible integer or maximum possible integer, then that question is a question of BINARY SEARCH ON ANSWERS
+
+// QUESTION REFRAMED to understand that it comes under BINARY SEARCH ON ANSWERS
+// - find the maximum integer which on square <= n
 
 // 📍 optimal approach (sir's approach)
 // - TC -> O(log2(n))
@@ -34,6 +38,7 @@ int squareRoot(int n)
     return end;
     // return result; // this is also correct
 };
+// 📍 TEST CASE to understand how returning end works : n = 28
 
 // 📍 bruteforce approach
 // - TC -> O(n)
