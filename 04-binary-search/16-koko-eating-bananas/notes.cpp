@@ -32,7 +32,7 @@ int minEatingSpeed(vector<int> &piles, int h)
             // };
             // 📍 using ceil()
             timeTaken += ceil((double)pileSize / mid);
-            // 📝 that (double) is necessary, else pileSize / mid will provide us the floored value by default, on which applying ceil won't help
+            // 📝 that (double) is necessary, else (pileSize / mid) will provide us the floored value by default, on which applying ceil won't help
         }
         cout << "timeTaken = " << timeTaken << endl; 
         if (timeTaken > h)
@@ -46,7 +46,7 @@ int minEatingSpeed(vector<int> &piles, int h)
         }
     }
     // return answer;
-    return start;
+    return start; // 💡 myHint : we are supposed to move left on finding a candidate answer
 }
 
 // 📍 SOME CONCLUSIONS
@@ -57,72 +57,72 @@ int minEatingSpeed(vector<int> &piles, int h)
 // - O(log(max(...piles)) * piles.length) + piles.length
 
 // 📍 second approach (to handle that RUNTIME ERROR)
-// int minEatingSpeed(vector<int> &piles, int h)
-// {
-//     int largestPileSize = 0;
-//     for (int pileSize : piles)
-//     {
-//         if (pileSize > largestPileSize)
-//         {
-//             largestPileSize = pileSize;
-//         }
-//     }
-//     int start = 1;
-//     int end = largestPileSize;
-//     int answer = 0;
-//     while (start <= end)
-//     {
-//         int mid = start + (end - start) / 2;
-//         cout << "s = " << start << "; e = " << end << "; m = " << mid << endl;
-//         // 📍 handling runtime error using a flag
-//         // int timeTaken = 0;
-//         // bool tooSlowFlag = false;
-//         // for (int pileSize : piles)
-//         // {
-//         //     timeTaken += pileSize / mid;
-//         //     // handling RTE
-//         //     if (timeTaken > h)
-//         //     {
-//         //         tooSlowFlag = true;
-//         //         break;
-//         //     };
-//         //     if (pileSize % mid)
-//         //     {
-//         //         timeTaken++;
-//         //     };
-//         // }
-//         // if (tooSlowFlag || timeTaken > h)
-//         // { // koko is eating too slowly, tell her to increase her speed
-//         //     start = mid + 1;
-//         // }
-//         // else
-//         // { // great! lets see if koko eating even more slowly works out or not
-//         //     answer = mid;
-//         //     end = mid - 1;
-//         // }
-//         // 📍 handling runtime error using long long
-//         long long timeTaken = 0;
-//         bool tooSlowFlag = false;
-//         for (int pileSize : piles)
-//         {
-//             timeTaken += pileSize / mid;
-//             if (pileSize % mid)
-//             {
-//                 timeTaken++;
-//             };
-//         }
-//         if (timeTaken > h)
-//         { // koko is eating too slowly, tell her to increase her speed
-//             start = mid + 1;
-//         }
-//         else
-//         { // great! lets see if koko eating even more slowly works out or not
-//             answer = mid;
-//             end = mid - 1;
-//         }
-//     }
-//     return answer;
-// }
+int minEatingSpeed(vector<int> &piles, int h)
+{
+    int largestPileSize = 0;
+    for (int pileSize : piles)
+    {
+        if (pileSize > largestPileSize)
+        {
+            largestPileSize = pileSize;
+        }
+    }
+    int start = 1;
+    int end = largestPileSize;
+    int answer = 0;
+    while (start <= end)
+    {
+        int mid = start + (end - start) / 2;
+        cout << "s = " << start << "; e = " << end << "; m = " << mid << endl;
+        // 📍 handling runtime error using a flag
+        // int timeTaken = 0;
+        // bool tooSlowFlag = false;
+        // for (int pileSize : piles)
+        // {
+        //     timeTaken += pileSize / mid;
+        //     // handling RTE
+        //     if (timeTaken > h)
+        //     {
+        //         tooSlowFlag = true;
+        //         break;
+        //     };
+        //     if (pileSize % mid)
+        //     {
+        //         timeTaken++;
+        //     };
+        // }
+        // if (tooSlowFlag || timeTaken > h)
+        // { // koko is eating too slowly, tell her to increase her speed
+        //     start = mid + 1;
+        // }
+        // else
+        // { // great! lets see if koko eating even more slowly works out or not
+        //     answer = mid;
+        //     end = mid - 1;
+        // }
+        // 📍 handling runtime error using long long
+        long long timeTaken = 0;
+        bool tooSlowFlag = false;
+        for (int pileSize : piles)
+        {
+            timeTaken += pileSize / mid;
+            if (pileSize % mid)
+            {
+                timeTaken++;
+            };
+        }
+        if (timeTaken > h)
+        { // koko is eating too slowly, tell her to increase her speed
+            start = mid + 1;
+        }
+        else
+        { // great! lets see if koko eating even more slowly works out or not
+            answer = mid;
+            end = mid - 1;
+        }
+    }
+    return answer;
+}
 
 // 📍 first approach (RUNTIME ERROR)
 // - RTE test case : piles = [805306368,805306368,805306368]; h = 1000000000

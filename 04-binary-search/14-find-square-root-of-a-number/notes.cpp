@@ -1,7 +1,6 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-
 // 📝 NOTE
 // - this question comes under the BINARY SEARCH ON ANSWERS concept
 // - if in a question, we are sure about the answer's range and we are asked to find minimum possible integer or maximum possible integer, then that question is a question of BINARY SEARCH ON ANSWERS
@@ -35,7 +34,7 @@ int squareRoot(int n)
         };
     };
     cout << "returning " << end << endl;
-    return end;
+    return end; // 💡 myHint : we are supposed to move right on finding a candidate answer
     // return result; // this is also correct
 };
 // 📍 TEST CASE to understand how returning end works : n = 28
@@ -100,6 +99,7 @@ int main()
 {
     // cout << squareRoot(25) << endl;
     // cout << squareRoot(36) << endl;
-    cout << squareRoot(37) << endl;
+    // cout << squareRoot(37) << endl;
+    cout << squareRoot(28) << endl;
     return 0;
 };
