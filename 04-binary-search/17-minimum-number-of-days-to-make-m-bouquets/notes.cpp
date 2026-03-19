@@ -1,72 +1,118 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-int calculateNumberOfPossibleBouquets(vector<int> &bloomDay, int k, int mid){
+// 📍 another variation of the optimal solution
+// - involves using a helper function that returns a boolean value (true if possibleBouquets >= m) (false if possibleBouquets < m)
+// - and modifying the logic inside the minDay accordingly
+
+// 📍 complexity dicussion
+// - TC -> O(log(largestBloomDay - smallestBloomDay + 1)) due to BINARY SEARCH + O(bloomDay.size()) for calculation of the possible number of bouquets
+// - SC -> O(1)
+
+// 📍 sir's logic for calculateNumberOfPossibleBouquets
+int calculateNumberOfPossibleBouquets(vector<int> &bloomDay, int k, int mid)
+{
     int possibleBouquets = 0;
-    int flowerCountInBouquet = 0;
-    for(int i = 0; i<bloomDay.size(); i++){
-        cout << "bloomDay[i] = " << bloomDay[i] << endl;
-        if(bloomDay[i] <= mid){
-            cout << "it is <= mid=" << mid << endl;
-            flowerCountInBouquet+=1;
-            cout << "flowerCountInBouquet = " << flowerCountInBouquet << endl;
-            if(flowerCountInBouquet == k){
-                cout << "flowerCountInBouquet == k=" << k << endl;
-                possibleBouquets++;
-                cout << "popossibleBouquets = " << possibleBouquets << endl;
-                flowerCountInBouquet = 0;
-                cout << "updated flowerCountInBouquet = " << flowerCountInBouquet << endl;
-            };
+    int flowerCount = 0;
+    for (int i = 0; i < bloomDay.size(); i++)
+    {
+        if (bloomDay[i] <= mid)
+        {
+            cout << "bloomDay[i] <= mid" << endl;
+            flowerCount++;
+            cout << "updated flowerCount=" << flowerCount << endl;
         }
-        else{
-            cout << "it is > mid=" << mid << endl;
-            flowerCountInBouquet = 0;
-            cout << "flowerCountInBouquet = " << flowerCountInBouquet << endl;
+        else
+        {
+            cout << "bloomDay[i] > mid" << endl;
+            possibleBouquets += (flowerCount / k);
+            flowerCount = 0;
+            cout << "updated possibleBouquets=" << possibleBouquets << endl;
+            cout << "updated flowerCount=" << flowerCount << endl;
         }
     }
+    cout << "after iteration" << endl;
+    possibleBouquets += (flowerCount / k);
+    flowerCount = 0;
+    cout << "updated possibleBouquets=" << possibleBouquets << endl;
+    cout << "updated flowerCount=" << flowerCount << endl;
     return possibleBouquets;
 }
+// 📍 my logic for calculateNumberOfPossibleBouquets (more intuitive)
+// int calculateNumberOfPossibleBouquets(vector<int> &bloomDay, int k, int mid){
+//     int possibleBouquets = 0;
+//     int flowerCountInBouquet = 0;
+//     for(int i = 0; i<bloomDay.size(); i++){
+//         cout << "bloomDay[i] = " << bloomDay[i] << endl;
+//         if(bloomDay[i] <= mid){
+//             cout << "it is <= mid=" << mid << endl;
+//             flowerCountInBouquet+=1;
+//             cout << "flowerCountInBouquet = " << flowerCountInBouquet << endl;
+//             if(flowerCountInBouquet == k){
+//                 cout << "flowerCountInBouquet == k=" << k << endl;
+//                 possibleBouquets++;
+//                 cout << "popossibleBouquets = " << possibleBouquets << endl;
+//                 flowerCountInBouquet = 0;
+//                 cout << "updated flowerCountInBouquet = " << flowerCountInBouquet << endl;
+//             };
+//         }
+//         else{
+//             cout << "it is > mid=" << mid << endl;
+//             flowerCountInBouquet = 0;
+//             cout << "flowerCountInBouquet = " << flowerCountInBouquet << endl;
+//         }
+//     }
+//     return possibleBouquets;
+// }
 int minDays(vector<int> &bloomDay, int m, int k)
 {
     long long product = (long)m * k;
     // if(m * k > bloomDay.size()){ // ⚠️ m*k can cause integer overflow
-    if(product > bloomDay.size()){
+    if (product > bloomDay.size())
+    {
         return -1;
     }
     int start = INT32_MAX;
     int end = INT32_MIN;
-    for(int num : bloomDay){
-        if(num < start) {
+    for (int num : bloomDay)
+    {
+        if (num < start)
+        {
             start = num;
         }
-        if(num > end) {
+        if (num > end)
+        {
             end = num;
         }
     }
     int answer = -1;
-    while(start <= end){
-        int mid = start + (end - start)/2;
+    while (start <= end)
+    {
+        int mid = start + (end - start) / 2;
         cout << "s = " << start << "; e = " << end << "; m = " << mid << endl;
         int possibleBouquets = calculateNumberOfPossibleBouquets(bloomDay, k, mid);
-        if(possibleBouquets >= m){
+        if (possibleBouquets >= m)
+        {
             answer = mid;
             end = mid - 1;
             cout << "updated answer = " << mid << endl;
             cout << "moving left" << endl;
         }
-        else{
+        else
+        {
             start = mid + 1;
             cout << "moving right" << endl;
         }
         cout << endl;
     }
     return answer;
+    return start; // will also work // 💡 myHint : we are supposed to move left on finding the answer
 }
 
 int main()
 {
     // // 📍 TC 1
-    // vector<int> bloomDay = {1,10,3,10,2};
+    // vector<int> bloomDay = {1, 10, 3, 10, 2};
     // int m = 3;
     // int k = 1;
     // // 📍 TC 2
