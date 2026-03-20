@@ -6,7 +6,7 @@ using namespace std;
 // - and modifying the logic inside the minDay accordingly
 
 // 📍 complexity dicussion
-// - TC -> O(log(largestBloomDay - smallestBloomDay + 1)) due to BINARY SEARCH + O(bloomDay.size()) for calculation of the possible number of bouquets
+// - TC -> O(log(largestBloomDay - smallestBloomDay + 1)) (due to BINARY SEARCH) *  O(bloomDay.size()) (for calculation of the possible number of bouquets)
 // - SC -> O(1)
 
 // 📍 sir's logic for calculateNumberOfPossibleBouquets
