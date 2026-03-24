@@ -57,7 +57,7 @@ int shipWithinDays(vector<int> &weights, int days)
         }
     }
     // cout << "answer = " << answer << endl;
-    return start;
+    return start; // 💡 myHint : we are supposed to move left on finding the candidate answer
 }
 
 int main()
