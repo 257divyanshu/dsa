@@ -1,7 +1,7 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-// 📍 question : an array sorted in ascending order has be rotated, find how many times had it been rotated
+// 📍 question : an array sorted in ascending order has been rotated, find how many times had it been rotated
 
 // 📍 approach 2
 // - TC -> O(log2(n))
