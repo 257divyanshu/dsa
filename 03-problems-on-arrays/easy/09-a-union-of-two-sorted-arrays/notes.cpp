@@ -4,7 +4,7 @@ using namespace std;
 // 📍 optimal approach
 // - two pointer approach
 // - TC -> O(m+n)
-// - SC -> O(m+n)
+// - SC -> O(m+n) (for storing the result) (no space used for solving the problem)
 vector<int> unionOfTwoSortedArrays(vector<int> vect1, vector<int> vect2)
 {
     vector<int> result(0);

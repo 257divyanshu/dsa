@@ -1,6 +1,20 @@
 #include <bits/stdc++.h>
 using namespace std;
 
+// 📍 intution behind sir's optimal approach
+// - the standard things we do in binary search: 
+//   (i) while(start <= end)
+//   (ii) start = mid + 1
+//   (iii) end = mid - 1
+// - won't work here
+// - because here, we are working with long double (and not with int)
+// - using the condition while(start <= end) for start and end of long double datatype will lead to too many interations (that would be redundant)
+// - the condition needs to be while(end - start > 1e-6) (the 1e-6 is mentioned in the question)
+// - also, we need to use start = mid; and end = mid; instead of start = mid + 1; and end = mid - 1;
+// - why returning end works? see 📸 optimal-solution/image-01-why-return-end.png
+// - the concept of opposite polarity won't work because here we don't have start = mid + 1; and end = mid - 1;
+// - because the concept of opposite polarity doesn't work here, returning start (because we are supposed to move left on finding the answer) won't work
+
 // 📍 sir's optimal
 // - TC -> O( n + ( log(maxDiff) * n ) )
 int numberOfGasStationsRequired(double dist, vector<int> &arr)
@@ -9,11 +23,11 @@ int numberOfGasStationsRequired(double dist, vector<int> &arr)
     for (int i = 1; i < arr.size(); i++)
     {
         int stationsInBetween = (arr[i] - arr[i - 1]) / dist;
-        cout << "(arr[i] - arr[i - 1]) " << (arr[i] - arr[i - 1]) << endl;
-        cout << "stationsInBetween * dist " << stationsInBetween * dist << endl;
+        // cout << "(arr[i] - arr[i - 1]) " << (arr[i] - arr[i - 1]) << endl;
+        // cout << "stationsInBetween * dist " << stationsInBetween * dist << endl;
         if ((arr[i] - arr[i - 1]) == stationsInBetween * dist)
         {
-            cout << "decrementing stationsInBetween" << endl;
+            // cout << "decrementing stationsInBetween" << endl;
             stationsInBetween--;
         };
         count += stationsInBetween;
@@ -40,7 +54,7 @@ double minimiseMaxDistance(vector<int> &stations, int k)
         double mid = start + (end - start) / 2;
         cout << "start = " << start << "; end = " << end << "; mid = " << mid << endl;
         int count = numberOfGasStationsRequired(mid, stations);
-        cout << "count = " << count << endl;
+        // cout << "count = " << count << endl;
         if (count <= k)
         {
             cout << "count <= k" << endl;
