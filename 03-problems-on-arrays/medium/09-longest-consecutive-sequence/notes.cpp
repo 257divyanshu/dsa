@@ -1,33 +1,125 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-// 📍 sir's better approach
-// - TC -> O(n + n * log(n))
+// 🏆 third approach after GPT's help ✔️
+// - TC -> O(n) (O(3*n) more precisely)
 int longestConsecutive(vector<int> &nums)
 {
-    if(nums.size() == 0){
-        return 0;
-    };
-    int longestSequenceLength = 1; // THINK : why not 0? (can be 0, but then we'll have to update longestSequenceLength again after the loop (if currentSequenceLength is greater than longestSequenceLength) )
-    int currentSequenceLength = 0; // THINK : why not 1? (can be 1, with no consequences)
-    int lastSmaller = INT32_MIN;
-    for(int i = 0; i < nums.size(); i++){
-        if(nums[i] - 1 == lastSmaller){
-            currentSequenceLength++;
-            if(currentSequenceLength > longestSequenceLength){
-                longestSequenceLength = currentSequenceLength;
-            };
-            lastSmaller = nums[i];
+    unordered_set<int> uset;
+    for (int num : nums)
+    {                     // O(n)
+        uset.insert(num); // O(1) operation
+    }
+    int longestSequenceLength = 0;
+    for (auto num : uset)
+    { // O(n)
+        int currentSequenceLength = 0;
+        if(uset.find(num-1) != uset.end()){
+            continue;
         }
-        else if (nums[i] != lastSmaller){
-            currentSequenceLength = 1;
-            lastSmaller = nums[i];
-        };
-    };
+        while (uset.find(num) != uset.end())
+        { // .find() is O(1) operation here
+            currentSequenceLength++;
+            num += 1;
+        }
+        if (currentSequenceLength > longestSequenceLength)
+        {
+            longestSequenceLength = currentSequenceLength;
+        }
+    }
     return longestSequenceLength;
-};
+}
 
-// 📍 my approach after sir's better approach intution 
+// 📍 second approach failed on 81st testcase (out of 85 testcases)
+// 📍 hint : 
+// - You are iterating over nums, not over the set.
+// - What happens when nums contains duplicates?
+
+// 📍 second approach after GPT's help ❌
+// int longestConsecutive(vector<int> &nums)
+// {
+//     unordered_set<int> uset;
+//     for (int num : nums)
+//     {                     // O(n)
+//         uset.insert(num); // O(1) operation
+//     }
+//     int longestSequenceLength = 0;
+//     for (int num : nums)
+//     { // O(n)
+//         int currentSequenceLength = 0;
+//         if(uset.find(num-1) != uset.end()){
+//             continue;
+//         }
+//         while (uset.find(num) != uset.end())
+//         { // .find() is O(1) operation here
+//             currentSequenceLength++;
+//             num += 1;
+//         }
+//         if (currentSequenceLength > longestSequenceLength)
+//         {
+//             longestSequenceLength = currentSequenceLength;
+//         }
+//     }
+//     return longestSequenceLength;
+// }
+
+// 📍 first approach failed on 74th testcase (out of 85 testcases)
+// 📍 hint : 
+// - You are recomputing the same sequences multiple times.
+// - Only start counting a sequence when the current number is the start of a sequence.
+
+// 📍 first approach after GPT's help ❌
+// int longestConsecutive(vector<int> &nums)
+// {
+//     unordered_set<int> uset;
+//     for (int num : nums)
+//     {                     // O(n)
+//         uset.insert(num); // O(1) operation
+//     }
+//     int longestSequenceLength = 0;
+//     for (int num : nums)
+//     { // O(n)
+//         int currentSequenceLength = 0;
+//         while (uset.find(num) != uset.end())
+//         { // .find() is O(1) operation here
+//             currentSequenceLength++;
+//             num += 1;
+//         }
+//         if (currentSequenceLength > longestSequenceLength)
+//         {
+//             longestSequenceLength = currentSequenceLength;
+//         }
+//     }
+//     return longestSequenceLength;
+// }
+
+// 📍 sir's better approach
+// - TC -> O(n + n * log(n))
+// int longestConsecutive(vector<int> &nums)
+// {
+//     if(nums.size() == 0){
+//         return 0;
+//     };
+//     int longestSequenceLength = 1; // THINK : why not 0? (can be 0, but then we'll have to update longestSequenceLength again after the loop (if currentSequenceLength is greater than longestSequenceLength) )
+//     int currentSequenceLength = 0; // THINK : why not 1? (can be 1, with no consequences)
+//     int lastSmaller = INT32_MIN;
+//     for(int i = 0; i < nums.size(); i++){
+//         if(nums[i] - 1 == lastSmaller){
+//             currentSequenceLength++;
+//             if(currentSequenceLength > longestSequenceLength){
+//                 longestSequenceLength = currentSequenceLength;
+//             };
+//             lastSmaller = nums[i];
+//         }
+//         else if (nums[i] != lastSmaller){
+//             currentSequenceLength = 1;
+//             lastSmaller = nums[i];
+//         };
+//     };
+//     return longestSequenceLength;
+// };
+
+// 📍 my approach after sir's better approach intution
 // - TC -> O(n + n * log(n))
 // - SC -> O(1)
 // int longestConsecutive(vector<int> &nums)
@@ -38,27 +130,9 @@ int longestConsecutive(vector<int> &nums)
 //     };
 //     sort(nums.begin(), nums.end());
 //     int currentSequenceLength = 1;
-//     int longestSequenceLength = 0;
+//     int longestSequenceLength = 1;
 //     for (int i = 0; i < nums.size() - 1; i++)
 //     {
-//         // 📍 either use this:
-//         // if (nums[i + 1] == nums[i] + 1)
-//         // {
-//         //     currentSequenceLength++;
-//         //     if (currentSequenceLength > longestSequenceLength)
-//         //     {
-//         //         longestSequenceLength = currentSequenceLength;
-//         //     };
-//         // }
-//         // else if (nums[i + 1] == nums[i])
-//         // {
-//         //     // do nothing
-//         // }
-//         // else
-//         // {
-//         //     currentSequenceLength = 1;
-//         // };
-//         // 📍 or use this
 //         if (nums[i + 1] > nums[i] + 1)
 //         {
 //             currentSequenceLength = 1;
@@ -74,10 +148,6 @@ int longestConsecutive(vector<int> &nums)
 //                 };
 //             }
 //         };
-//     };
-//     if (currentSequenceLength > longestSequenceLength)
-//     {
-//         longestSequenceLength = currentSequenceLength;
 //     };
 //     return longestSequenceLength;
 // };
@@ -233,16 +303,16 @@ int main()
     // cout <<endl;
 
     // 📍 tc1
-    // vector<int> nums = {100, 4, 200, 1, 3, 2};
+    vector<int> nums = {100, 4, 200, 1, 3, 2};
     // vector<int> nums = {8,4,9,1,10,3,11,2,12};
     // vector<int> nums = {1,3,5,7,9,11};
     // vector<int> nums = {-3,1,2,3,5};
     // vector<int> nums = {0,-1};
-    // cout << longestConsecutive(nums) << endl;
+    cout << longestConsecutive(nums) << endl;
 
     // 📍 mtc
-    vector<int> vect = {};
-    cout << longestConsecutive(vect) << endl;
+    // vector<int> vect = {};
+    // cout << longestConsecutive(vect) << endl;
 
     return 0;
 };
