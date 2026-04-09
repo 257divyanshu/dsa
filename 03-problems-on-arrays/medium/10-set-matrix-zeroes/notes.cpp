@@ -269,8 +269,8 @@ void setZeroes(vector<vector<int>> &matrix)
 // }
 
 // 📍 first approach (its the better that leetcode has mentioned in description)
-// - TC -> O(m+n)
-// - SC -> O(m*n)
+// - TC -> O(m*n)
+// - SC -> O(m+n)
 // void setZeroes(vector<vector<int>> &matrix)
 // {
 //     int m = matrix.size();
