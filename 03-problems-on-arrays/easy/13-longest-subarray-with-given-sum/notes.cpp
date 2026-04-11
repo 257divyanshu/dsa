@@ -72,7 +72,7 @@ int longestSubarrayWithSumK(vector<int> vect, int k){
         // 📍 if the array has only positives:
         // hashMap[currSum] = i; // 📍 sir placed it here
         // 📍 if the arrays has 0s and negatives as well
-        // e.g. EDGE CASE : {10, 0, 5, 2, 7, 1} 
+        // e.g. EDGE CASE : {10, 0, 5, 2, 7, 1} k = 15
         if(hashMap.find(currSum) == hashMap.end()){
             hashMap[currSum] = i;
         }
