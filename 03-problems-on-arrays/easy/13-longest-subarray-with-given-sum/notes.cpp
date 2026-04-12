@@ -5,80 +5,80 @@ using namespace std;
 // - is a contiguous part of an array
 
 // 📍 optimal approach (if vect has non-negatives only)
-// - two pointer approach
+// - two pointer approach using the concept of prefixSum
 // - TC -> O(n) (O(2*n) in worst case)
 // - SC -> O(1)
-// int longestSubarrayWithSumK(vector<int> vect, long long k)
-// {
-//     int longestSubarrayLength = 0;
-//     long long currentSum = 0;
-//     int i = 0;
-//     for (int j = 0; j < vect.size(); j++)
-//     {
-//         cout << " i = " << i << "; j = " << j << endl;
-//         currentSum += vect[j];
-//         cout << "currentSum = " << currentSum << endl;
-//         if (currentSum == k)
-//         {
-//             int currSubarrayLength = j - i + 1;
-//             cout << "currSubarrayLength = " << currSubarrayLength << endl;
-//             longestSubarrayLength = max(longestSubarrayLength, currSubarrayLength);
-//             // currentSum -= vect[i];
-//             // i++;
-//         }
-//         else if (currentSum > k)
-//         {
+int longestSubarrayWithSumK(vector<int> vect, long long k)
+{
+    int longestSubarrayLength = 0;
+    long long currentSum = 0;
+    int i = 0;
+    for (int j = 0; j < vect.size(); j++)
+    {
+        cout << " i = " << i << "; j = " << j << endl;
+        currentSum += vect[j];
+        cout << "currentSum = " << currentSum << endl;
+        if (currentSum == k)
+        {
+            int currSubarrayLength = j - i + 1;
+            cout << "currSubarrayLength = " << currSubarrayLength << endl;
+            longestSubarrayLength = max(longestSubarrayLength, currSubarrayLength);
+            // currentSum -= vect[i];
+            // i++;
+        }
+        else if (currentSum > k)
+        {
 
-//             // 📍 might miss the subarray near the right end
-//             // edge case {1, 2, 3, 1, 1, 1, 1, 3, 3}, k = 6
-//             // currentSum -= vect[i];
-//             // i++;
+            // 📍 might miss the subarray near the right end
+            // edge case {1, 2, 3, 1, 1, 1, 1, 3, 3}, k = 6
+            // currentSum -= vect[i];
+            // i++;
 
-//             // 📍 won't miss the subarray near the right end
-//             while (currentSum > k)
-//             {
-//                 currentSum -= vect[i];
-//                 i++;
-//             }
-//             cout << "updated i = " << i << endl;
-//             if (currentSum == k)
-//             {
-//                 int currSubarrayLength = j - i + 1;
-//                 cout << "currSubarrayLength = " << currSubarrayLength << endl;
-//                 longestSubarrayLength = max(longestSubarrayLength, currSubarrayLength);
-//             }
-//         }
-//     }
-//     cout << "currentSum = " << currentSum << endl;
-//     return longestSubarrayLength;
-// }
+            // 📍 won't miss the subarray near the right end
+            while (currentSum > k)
+            {
+                currentSum -= vect[i];
+                i++;
+            }
+            cout << "updated i = " << i << endl;
+            if (currentSum == k)
+            {
+                int currSubarrayLength = j - i + 1;
+                cout << "currSubarrayLength = " << currSubarrayLength << endl;
+                longestSubarrayLength = max(longestSubarrayLength, currSubarrayLength);
+            }
+        }
+    }
+    cout << "currentSum = " << currentSum << endl;
+    return longestSubarrayLength;
+}
 
 // 📍 better approach (its optimal if the array contains negatives also)
 // - TC -> O(n) (if using unordered_map)
 // - TC -> O(n * log(n)) (if using map)
 // - SC -> O(n)
-int longestSubarrayWithSumK(vector<int> vect, int k){
-    int longestSubarrayLength = 0;
-    unordered_map<int,int> hashMap;
-    int currSum = 0;
-    for(int i = 0; i < vect.size(); i++){
-        currSum += vect[i];
-        if(currSum == k){
-            longestSubarrayLength = max(longestSubarrayLength, i+1);
-        }
-        else if (hashMap.find(currSum-k)!=hashMap.end()){
-            longestSubarrayLength = max(longestSubarrayLength, i - hashMap[currSum-k]);
-        }
-        // 📍 if the array has only positives:
-        // hashMap[currSum] = i; // 📍 sir placed it here
-        // 📍 if the arrays has 0s and negatives as well
-        // e.g. EDGE CASE : {10, 0, 5, 2, 7, 1} k = 15
-        if(hashMap.find(currSum) == hashMap.end()){
-            hashMap[currSum] = i;
-        }
-    }
-    return longestSubarrayLength;
-};
+// int longestSubarrayWithSumK(vector<int> vect, int k){
+//     int longestSubarrayLength = 0;
+//     unordered_map<int,int> hashMap;
+//     int currSum = 0;
+//     for(int i = 0; i < vect.size(); i++){
+//         currSum += vect[i];
+//         if(currSum == k){
+//             longestSubarrayLength = max(longestSubarrayLength, i+1);
+//         }
+//         else if (hashMap.find(currSum-k)!=hashMap.end()){
+//             longestSubarrayLength = max(longestSubarrayLength, i - hashMap[currSum-k]);
+//         }
+//         // 📍 if the array has only positives:
+//         // hashMap[currSum] = i; // 📍 sir placed it here
+//         // 📍 if the arrays has 0s and negatives as well
+//         // e.g. EDGE CASE : {10, 0, 5, 2, 7, 1} k = 15
+//         if(hashMap.find(currSum) == hashMap.end()){
+//             hashMap[currSum] = i;
+//         }
+//     }
+//     return longestSubarrayLength;
+// };
 
 // 📍 bruteforce approach
 // 1️⃣ returning the longestSubarray
