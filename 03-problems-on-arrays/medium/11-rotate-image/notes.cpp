@@ -1,19 +1,22 @@
 #include <bits/stdc++.h>
 using namespace std;
 
+// 📍 NOTE 
+// - O ( ( (n^2) - n ) / 2 ) and O(n^2) are essentially the same in asymptotic terms
+
 // 📍 sir's optimal approach
-// - TC -> O(n*n) (precisely : O ( n * ( n+ 1 ) / 2 )
+// - TC -> O(n*n) (precisely : O ( n^2 - (n/2) )
 // - SC -> O(1)
 void rotate(vector<vector<int>> &matrix){
     int n = matrix.size();
     // take transpose of the matrix
-    // 📍 way 1
-    // for(int i = 0; i<n; i++){
-    //     for(int j = i; j<n; j++){
+    // 📍 way 1 (sir's way) O ( ( (n^2) - n ) / 2 )
+    // for(int i = 0; i<n-1; i++){
+    //     for(int j = i+1; j<n; j++){
     //         swap(matrix[i][j], matrix[j][i]);
     //     }
     // }
-    // 📍 way 2
+    // 📍 way 2 (my way) O ( ( (n^2) - n ) / 2 )
     for(int i = 0; i<n; i++){
         for(int j = 0; j<n; j++){
             if(j > i){
@@ -29,7 +32,7 @@ void rotate(vector<vector<int>> &matrix){
         cout << endl;
     }
     cout << endl;
-    // reverse each row
+    // reverse each row (O(n^2)/2)
     for(int i = 0; i<n; i++){
         reverse(matrix[i].begin(), matrix[i].end());
     }

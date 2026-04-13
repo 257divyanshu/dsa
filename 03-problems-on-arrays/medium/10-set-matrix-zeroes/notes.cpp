@@ -2,7 +2,7 @@
 using namespace std;
 
 // 📍 sir's optimal
-// - TC -> O(2 * m * n)
+// - TC -> O(m*n) (precisely O(2 * m * n))
 // - SC -> O(1)
 void setZeroes(vector<vector<int>> &matrix)
 {
@@ -99,7 +99,7 @@ void setZeroes(vector<vector<int>> &matrix)
 }
 
 // 📍 sir's better approach
-// - TC -> O(m*n)
+// - TC -> O(2*m*n)
 // - SC -> O(m+n)
 // void setZeroes(vector<vector<int>> &matrix)
 // {
@@ -141,6 +141,7 @@ void setZeroes(vector<vector<int>> &matrix)
 
 // 📍 sir's bruteforce approach (for binary matrix)
 // - TC -> O( (m*n) * (m+n) + m*n))
+// - SC -> O(1)
 // void setZeroes(vector<vector<int>> &matrix)
 // {
 //     int m = matrix.size();
@@ -207,7 +208,7 @@ void setZeroes(vector<vector<int>> &matrix)
 // }
 
 // 📍 third approach (its the bruteforce that leetcode has mentioned in description)
-// - TC -> O(m*n)
+// - TC -> O(m*n) (precisely O(3*m*n))
 // - SC -> O(m*n)
 // void setZeroes(vector<vector<int>> &matrix)
 // {
@@ -269,7 +270,7 @@ void setZeroes(vector<vector<int>> &matrix)
 // }
 
 // 📍 first approach (its the better that leetcode has mentioned in description)
-// - TC -> O(m*n)
+// - TC -> O(2*m*n)
 // - SC -> O(m+n)
 // void setZeroes(vector<vector<int>> &matrix)
 // {
