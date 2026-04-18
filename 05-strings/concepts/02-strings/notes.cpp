@@ -1,22 +1,40 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-// 📍 reverse a string
-void reverseString(string& str){
+// 📍 check if string is palindrome or not
+bool isPalindrome(string& str){
     int i = 0;
     int j = str.length() - 1;
+    bool result = true;
     while(i<j){
-        swap(str[i++],str[j--]);
+        if(str[i] != str[j]){
+            result = false;
+            break;
+        };
+        i++;
+        j--;
     };
+    return result;
 }
+
+// 📍 reverse a string
+// void reverseString(string& str){
+//     int i = 0;
+//     int j = str.length() - 1;
+//     while(i<j){
+//         swap(str[i++],str[j--]);
+//     };
+// }
 
 int main()
 {
+    string str1 = "racecar";
     // string str1 = "madam";
     // string str1 = "sir";
-    string str1 = "abcd";
-    reverseString(str1);
-    cout << str1 << endl;
+    // string str1 = "abcd";
+    // reverseString(str1);
+    // cout << str1 << endl;
+    cout << isPalindrome(str1) << endl;
     return 0;
 };
 
