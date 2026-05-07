@@ -1,43 +1,108 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-// 📍 my approach (after Nikil Lohia's intuition)
+// 📍 Manacher's algorithm
+// - Ⓜ️ manachers-algo-explanation.md
+string longestPalindrome(string s)
+{
+    string t = "#";
+
+    for (char c : s)
+    {
+        t += c;
+        t += '#';
+    }
+
+    int n = t.length();
+
+    vector<int> p(n, 0);
+
+    int center = 0;
+    int rightBoundary = 0;
+
+    int maxLength = 0;
+    int centerIndex = 0;
+
+    for (int i = 0; i < n; i++)
+    {
+        int mirror = 2 * center - i;
+
+        if (i < rightBoundary)
+        {
+            p[i] = min(rightBoundary - i, p[mirror]);
+        }
+
+        int left = i - (p[i] + 1);
+        int right = i + (p[i] + 1);
+
+        while (left >= 0 && right < n && t[left] == t[right])
+        {
+            p[i]++;
+            left--;
+            right++;
+        }
+
+        if (i + p[i] > rightBoundary)
+        {
+            center = i;
+            rightBoundary = i + p[i];
+        }
+
+        if (p[i] > maxLength)
+        {
+            maxLength = p[i];
+            centerIndex = i;
+        }
+    }
+
+    cout << t << endl;
+    for(auto pVal : p){
+        cout << pVal;
+    }
+    cout << endl;
+
+    int start = (centerIndex - maxLength) / 2;
+
+    return s.substr(start, maxLength);
+}
+
+// 📍 my approach (after Nikhil Lohia's intuition)
 // TC -> O(n^2)
 // SC -> O(1)
 // Ⓜ️ tc-analysis-2.md
 // 📍 version 2 (micro-optimized version)
 // Ⓜ️ lambda-functions.md
-string longestPalindrome(string s)
-{
-    int longestPalindromeStart = -1;
-    int longestPalindromeLength = 0;
-    int n = s.length();
-    auto expand = [&](int left, int right)
-    {
-        while ((left > -1) && (right < n) && (s[left] == s[right]))
-        {
-            int currentPalindromeLength = right - left + 1;
-            if (currentPalindromeLength > longestPalindromeLength)
-            {
-                longestPalindromeStart = left;
-                longestPalindromeLength = currentPalindromeLength;
-            };
-            left--;
-            right++;
-        };
-    };
-    for (int i = 0; i < n; i++)
-    {
-        // odd length
-        expand(i, i);
-        if ((i + 1 < n) && s[i + 1] == s[i])
-        {
-            // even length;
-            expand(i, i + 1);
-        }
-    };
-    return s.substr(longestPalindromeStart, longestPalindromeLength);
-};
+// string longestPalindrome(string s)
+// {
+//     int longestPalindromeStart = -1;
+//     int longestPalindromeLength = 0;
+//     int n = s.length();
+//     auto expand = [&](int left, int right)
+//     {
+//         while ((left > -1) && (right < n) && (s[left] == s[right]))
+//         {
+//             int currentPalindromeLength = right - left + 1;
+//             if (currentPalindromeLength > longestPalindromeLength)
+//             {
+//                 longestPalindromeStart = left;
+//                 longestPalindromeLength = currentPalindromeLength;
+//             };
+//             left--;
+//             right++;
+//         };
+//     };
+//     for (int i = 0; i < n; i++)
+//     {
+//         // odd length
+//         expand(i, i);
+//         if ((i + 1 < n) && s[i + 1] == s[i])
+//         {
+//             // even length;
+//             expand(i, i + 1);
+//         }
+//     };
+//     return s.substr(longestPalindromeStart, longestPalindromeLength);
+// };
 // 📍 version 1
 // string longestPalindrome(string s)
 // {
@@ -287,8 +352,8 @@ string longestPalindrome(string s)
 
 int main()
 {
-    // string s = "babad";
-    string s = "jrjnbctoqgzimtoklkxcknwmhiztomaofwwzjnhrijwkgmwwuazcowskjhitejnvtblqyepxispasrgvgzqlvrmvhxusiqqzzibcyhpnruhrgbzsmlsuacwptmzxuewnjzmwxbdzqyvsjzxiecsnkdibudtvthzlizralpaowsbakzconeuwwpsqynaxqmgngzpovauxsqgypinywwtmekzhhlzaeatbzryreuttgwfqmmpeywtvpssznkwhzuqewuqtfuflttjcxrhwexvtxjihunpywerkktbvlsyomkxuwrqqmbmzjbfytdddnkasmdyukawrzrnhdmaefzltddipcrhuchvdcoegamlfifzistnplqabtazunlelslicrkuuhosoyduhootlwsbtxautewkvnvlbtixkmxhngidxecehslqjpcdrtlqswmyghmwlttjecvbueswsixoxmymcepbmuwtzanmvujmalyghzkvtoxynyusbpzpolaplsgrunpfgdbbtvtkahqmmlbxzcfznvhxsiytlsxmmtqiudyjlnbkzvtbqdsknsrknsykqzucevgmmcoanilsyyklpbxqosoquolvytefhvozwtwcrmbnyijbammlzrgalrymyfpysbqpjwzirsfknnyseiujadovngogvptphuyzkrwgjqwdhtvgxnmxuheofplizpxijfytfabx";
+    string s = "babad";
+    // string s = "jrjnbctoqgzimtoklkxcknwmhiztomaofwwzjnhrijwkgmwwuazcowskjhitejnvtblqyepxispasrgvgzqlvrmvhxusiqqzzibcyhpnruhrgbzsmlsuacwptmzxuewnjzmwxbdzqyvsjzxiecsnkdibudtvthzlizralpaowsbakzconeuwwpsqynaxqmgngzpovauxsqgypinywwtmekzhhlzaeatbzryreuttgwfqmmpeywtvpssznkwhzuqewuqtfuflttjcxrhwexvtxjihunpywerkktbvlsyomkxuwrqqmbmzjbfytdddnkasmdyukawrzrnhdmaefzltddipcrhuchvdcoegamlfifzistnplqabtazunlelslicrkuuhosoyduhootlwsbtxautewkvnvlbtixkmxhngidxecehslqjpcdrtlqswmyghmwlttjecvbueswsixoxmymcepbmuwtzanmvujmalyghzkvtoxynyusbpzpolaplsgrunpfgdbbtvtkahqmmlbxzcfznvhxsiytlsxmmtqiudyjlnbkzvtbqdsknsrknsykqzucevgmmcoanilsyyklpbxqosoquolvytefhvozwtwcrmbnyijbammlzrgalrymyfpysbqpjwzirsfknnyseiujadovngogvptphuyzkrwgjqwdhtvgxnmxuheofplizpxijfytfabx";
     cout << longestPalindrome(s) << endl;
     return 0;
 };
