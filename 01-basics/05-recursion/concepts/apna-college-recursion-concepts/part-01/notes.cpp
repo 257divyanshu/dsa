@@ -1,9 +1,20 @@
 #include <bits/stdc++.h>
 using namespace std;
 
+// 📍 calculate sum of fist N natural number using recursion
+// TC -> O(n)
+// SC -> O(n)
+// - see 📸 image-04-sumTillN.png
+int sumTillN(int n){
+    if(n == 1){
+        return 1;
+    }
+    return n + sumTillN(n-1);
+}
+
 // finding time complexity using recurrence relation is more mathematical way
 // also, its not always possible to find the recurrence relation for a question
-// so, generally time complexity is calculated using the formula Total Time Complexity = Total No. of Recursive Calls * Work in each call
+// so, generally time complexity is calculated using the formula : Total Time Complexity = Total No. of Recursive Calls * Work in each call
 
 // - space complexity of the factorial calculation code is O(n)
 
@@ -14,7 +25,7 @@ using namespace std;
 // - Total SC = height of callstack * memory occupied in each call
 
 // 📍 calculate factorial of a number
-// TC -> O(n) see : 📸 image-02-factorial.png and image-03-factorial.png
+// TC -> O(n) see : 📸 image-02-factorial.png and 📸 image-03-factorial.png
 int factorial (int n){
     if(n == 1){
         return 1;
@@ -52,7 +63,13 @@ int main()
     // printNto1(5);
     // printNto1(1);
     // printNto1(0);
-    printNto1(-1);
+    // printNto1(-1);
+
+    cout << sumTillN(1) << endl;
+    cout << sumTillN(2) << endl;
+    cout << sumTillN(3) << endl;
+    cout << sumTillN(4) << endl;
+    cout << sumTillN(5) << endl;
 
     return 0;
 };
