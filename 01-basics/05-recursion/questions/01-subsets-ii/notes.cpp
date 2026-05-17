@@ -1,6 +1,55 @@
 #include <bits/stdc++.h>
 using namespace std;
 
+// 📍 print all subsets (recursive)
+int counter = 0;
+void printAllSubsets(vector<int> &currentVect, vector<int> &vect, int i)
+{
+    if (i == vect.size())
+    {
+        counter++;
+        cout << "counter = " << counter << endl;
+        for (auto elem : currentVect)
+        {
+            cout << elem << " ";
+        };
+        cout << endl << endl;
+        return;
+    }
+
+    // 📍 my way
+
+    // // call without pushing
+    // printAllSubsets(currentVect, vect, i+1);
+
+    // // call after pushing
+    // currentVect.push_back(vect[i]);
+    // printAllSubsets(currentVect, vect, i+1);
+
+    // 📍 ma'am's way
+
+    // call after pushing
+    currentVect.push_back(vect[i]);
+    printAllSubsets(currentVect, vect, i + 1);
+
+    // call without pushing
+    currentVect.pop_back();
+    printAllSubsets(currentVect, vect, i + 1);
+
+}
+
+// 📍 print all subsets (iterative)
+// void printAllSubsets(vector<int> vect){
+//     for(int i = 0; i<vect.size(); i++){
+//         for(int j = 0; j<vect.size(); j++){
+//             for(int k = i; k<=j; k++){
+//                 cout << vect[k] << " ";
+//             }
+//             cout << endl;
+//         }
+//     }
+// }
+
 // 📍 my second approach ✔️
 int customExponentiation(int a, int b)
 {
@@ -72,44 +121,50 @@ vector<vector<int>> subsetsWithDup(vector<int> &nums)
 
 int main()
 {
-    vector<vector<int>> vect1 = {{}, {1}, {1, 4}, {4}, {4, 1}, {4, 1, 4}, {4, 4}, {4, 4, 1}, {4, 4, 1, 4}, {4, 4, 4}, {4, 4, 4, 1}, {4, 4, 4, 1, 4}, {4, 4, 4, 4}};
-    vector<vector<int>> vect2 = {{}, {1}, {1, 4}, {1, 4, 4}, {1, 4, 4, 4}, {1, 4, 4, 4, 4}, {4}, {4, 4}, {4, 4, 4}, {4, 4, 4, 4}};
+    // vector<vector<int>> vect1 = {{}, {1}, {1, 4}, {4}, {4, 1}, {4, 1, 4}, {4, 4}, {4, 4, 1}, {4, 4, 1, 4}, {4, 4, 4}, {4, 4, 4, 1}, {4, 4, 4, 1, 4}, {4, 4, 4, 4}};
+    // vector<vector<int>> vect2 = {{}, {1}, {1, 4}, {1, 4, 4}, {1, 4, 4, 4}, {1, 4, 4, 4, 4}, {4}, {4, 4}, {4, 4, 4}, {4, 4, 4, 4}};
     // cout << vect1.size() << endl;
     // cout << vect2.size() << endl;
-    for (int i = 0; i < max(vect1.size(), vect2.size()); i++)
-    {
-        cout << "vect1[" << i << "] ";
-        if (i < vect1.size())
-        {
-            cout << "{ ";
-            for (int j = 0; j < vect1[i].size(); j++)
-            {
-                cout << vect1[i][j] << " ";
-            }
-            cout << "}";
-            cout << endl;
-        };
-        // cout << "vect2[" << i << "] " ;
-        // if(i<vect2.size()){
-        //     cout << "{ ";
-        //     for(int j = 0; j<vect2[i].size(); j++){
-        //         cout << vect2[i][j] << " ";
-        //     }
-        //     cout << "}";
-        //     cout << endl;
-        // };
-        // cout << endl;
+    // for (int i = 0; i < max(vect1.size(), vect2.size()); i++)
+    // {
+    //     cout << "vect1[" << i << "] ";
+    //     if (i < vect1.size())
+    //     {
+    //         cout << "{ ";
+    //         for (int j = 0; j < vect1[i].size(); j++)
+    //         {
+    //             cout << vect1[i][j] << " ";
+    //         }
+    //         cout << "}";
+    //         cout << endl;
+    //     };
+    //     // cout << "vect2[" << i << "] " ;
+    //     // if(i<vect2.size()){
+    //     //     cout << "{ ";
+    //     //     for(int j = 0; j<vect2[i].size(); j++){
+    //     //         cout << vect2[i][j] << " ";
+    //     //     }
+    //     //     cout << "}";
+    //     //     cout << endl;
+    //     // };
+    //     // cout << endl;
 
-        auto it = find(vect2.begin(), vect2.end(), vect1[i]);
-        if (it == vect2.end())
-        {
-            cout << "not found in vect2" << endl;
-        }
-        else
-        {
-            cout << "found in vect2" << endl;
-        }
-        cout << endl;
-    }
+    //     auto it = find(vect2.begin(), vect2.end(), vect1[i]);
+    //     if (it == vect2.end())
+    //     {
+    //         cout << "not found in vect2" << endl;
+    //     }
+    //     else
+    //     {
+    //         cout << "found in vect2" << endl;
+    //     }
+    //     cout << endl;
+    // }
+
+    vector<int> vect = {1, 2, 3, 4, 5};
+    // printAllSubsets(vect);
+    vector<int> subset;
+    printAllSubsets(subset, vect, 0);
+
     return 0;
 };

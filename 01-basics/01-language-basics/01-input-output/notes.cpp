@@ -74,7 +74,7 @@
 //     return 0;
 // };
 
-// 📍 basic bolilerplate
+// 📍 basic boilerplate
 // #include <iostream>
 // using namespace std;
 // int main()
