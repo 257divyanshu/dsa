@@ -39,5 +39,5 @@ int main()
 
 // 📍 maps
 // - stores key value pairs (with unique keys is sorted manner) 
-// - key can be of any datatype
+// - keys can be of any datatype
 // - rest of the functions like : erase, swap, size, empty are same
