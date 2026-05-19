@@ -1,7 +1,36 @@
 #include <bits/stdc++.h>
 using namespace std;
 
+// 📍 time complexity analysis
+// - see 📸 time-complexity.png
+
 // 📍 print all subsets (recursive)
+// 📍 my approach
+// - we shouldn't pass currentVect by reference if we are first calling without pushing and then calling after pushing
+// -  passing currentVect by reference produces wrong answer
+// int counter = 0;
+// void printAllSubsets(vector<int> currentVect, vector<int> &vect, int i)
+// {
+//     if (i == vect.size())
+//     {
+//         counter++;
+//         cout << "counter = " << counter << endl;
+//         for (auto elem : currentVect)
+//         {
+//             cout << elem << " ";
+//         };
+//         cout << endl << endl;
+//         return;
+//     }
+//     // call without pushing
+//     printAllSubsets(currentVect, vect, i + 1);
+//     // call after pushing
+//     currentVect.push_back(vect[i]);
+//     printAllSubsets(currentVect, vect, i + 1);
+// }
+// 📍 ma'am approach
+// - we are passing currentVect by reference because (i) copying is not required here (ii) making a copy introduces extra overhead
+// - but passing currentVect by value doesn't produce wrong answer
 int counter = 0;
 void printAllSubsets(vector<int> &currentVect, vector<int> &vect, int i)
 {
@@ -16,26 +45,12 @@ void printAllSubsets(vector<int> &currentVect, vector<int> &vect, int i)
         cout << endl << endl;
         return;
     }
-
-    // 📍 my way
-
-    // // call without pushing
-    // printAllSubsets(currentVect, vect, i+1);
-
-    // // call after pushing
-    // currentVect.push_back(vect[i]);
-    // printAllSubsets(currentVect, vect, i+1);
-
-    // 📍 ma'am's way
-
     // call after pushing
     currentVect.push_back(vect[i]);
     printAllSubsets(currentVect, vect, i + 1);
-
     // call without pushing
     currentVect.pop_back();
     printAllSubsets(currentVect, vect, i + 1);
-
 }
 
 // 📍 print all subsets (iterative)
@@ -161,7 +176,7 @@ int main()
     //     cout << endl;
     // }
 
-    vector<int> vect = {1, 2, 3, 4, 5};
+    vector<int> vect = {1, 2, 3};
     // printAllSubsets(vect);
     vector<int> subset;
     printAllSubsets(subset, vect, 0);
