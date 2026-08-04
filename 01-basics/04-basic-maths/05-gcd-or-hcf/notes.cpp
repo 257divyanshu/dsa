@@ -50,6 +50,7 @@ int getGCD(int x, int y)
 //         if ((x % i == 0) && (y % i == 0))
 //         {
 //             result = i;
+//             return result;
 //         };
 //     };
 //     return result;

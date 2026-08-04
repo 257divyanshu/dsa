@@ -73,7 +73,7 @@ int main()
     // 📍 erase() function
     // vector<int> vect1 = {1, 2, 3, 4, 5};
     // auto it1 = vect1.begin();
-    // - to delete one element, pass an iterator pointing to it
+    // - to delete one element, pass the iterator pointing to it
     // vect1.erase(it1);
     // - to delete a range of elements, pass the starting (inclusive) and the ending (exclusive) iterator
     // vect1.erase(it1, it1+2);
