@@ -4,7 +4,6 @@ using namespace std;
 // 📍 calculate sum of fist N natural number using recursion
 // TC -> O(n)
 // SC -> O(n)
-// - see 📸 image-04-sumTillN.png
 int sumTillN(int n){
     if(n == 1){
         return 1;
@@ -25,7 +24,6 @@ int sumTillN(int n){
 // - Total SC = height of callstack * memory occupied in each call
 
 // 📍 calculate factorial of a number
-// TC -> O(n) see : 📸 image-02-factorial.png and 📸 image-03-factorial.png
 int factorial (int n){
     if(n == 1){
         return 1;
@@ -44,7 +42,6 @@ int factorial (int n){
 // - main()
 
 // 📍 print n to 1 using recursion
-// TC -> O(n) see : 📸 image-01-printNto1.png
 void printNto1(int n){
     if(n <= 0){
         return;

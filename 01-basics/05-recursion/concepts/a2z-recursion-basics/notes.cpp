@@ -228,7 +228,6 @@ bool isPalindrome(string s)
 // };
 
 // 📍 print numbers from N to 1
-// - 📸 recursion tree : similar to that in image recursion-tree-01
 // - TC -> O(n)
 // - SC -> O(n) (stack space)
 // #include <bits/stdc++.h>
@@ -271,7 +270,6 @@ bool isPalindrome(string s)
 // };
 
 // 📍 print numbers from 1 to N
-// - 📸 recursion tree : similar to that in image recursion-tree-01
 // - TC -> O(n)
 // - SC -> O(n) (stack space)
 // #include <bits/stdc++.h>
@@ -293,7 +291,6 @@ bool isPalindrome(string s)
 // };
 
 // 📍 print name n times
-// - 📸 see image recursion-tree-01
 // - TC -> O(n)
 // - SC -> O(n) (stack space)
 // #include <bits/stdc++.h>

@@ -2,7 +2,6 @@
 using namespace std;
 
 // 📍 binary search
-// see 📸 image-07-binary-search.png
 // TC -> O(log(n))
 // SC -> O(log(n))
 int binarySearch(vector<int> arr, int start, int end, int target){
@@ -22,7 +21,6 @@ int binarySearch(vector<int> arr, int start, int end, int target){
 }
 
 // 📍 check if array is sorted or not
-// see 📸 image-06-check-if-array-is-sorted.png
 // TC -> O(n)
 // SC -> O(n)
 // 📍 ma'am's approach
@@ -30,30 +28,16 @@ bool checkIfSorted(vector<int> arr, int n){
     if(n == 1){
         return true;
     }
-    // - either this :
-    // if(arr[n-2] > arr[n-1]){
-    //     return false;
-    // }
-    // return checkIfSorted(arr, n-1);
-    // - or this
-    return (arr[n-2] > arr[n-1]) && checkIfSorted(arr, n-1);
+    if(arr[n-2] > arr[n-1]){
+        return false;
+    }
+    return checkIfSorted(arr, n-1);
 }
-// 📍 my approach
-// bool checkIfSorted(vector<int> arr, int n){
-//     if(n == arr.size()-1){
-//         return true;
-//     }
-//     if(arr[n] > arr[n+1]){
-//         return false;
-//     }
-//     return checkIfSorted(arr, n+1);
-// }
 
 // 📍 fibonacii
 // sequence : 0 1 1 2 3 5 8 13 21 34 55 89 144
 // TC -> O(2^n)
 // SC -> O(n)
-// see 📸 image-05-fiboncaii.png
 int fibo(int n){
     if(n == 0 || n == 1){
         return n;
