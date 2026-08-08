@@ -5,7 +5,7 @@ using namespace std;
 // - in hashmaps, we can only have inidividual data types (like int, char, etc) as keys, we cannot have pairs as keys 
 
 // - using unordered_map will give us O(n) TC in best and average case, and O(n^2) TC in worst case (when collisions happen)
-// - using map will give us O(log(n)) TC
+// - using map will give us O(n*log(n)) TC
 
 // 📍 hashing (using maps)
 int main()
@@ -74,7 +74,6 @@ int main()
 
 // - inside the main() function, we can at max declare an integer array of size 10^6
 // - outside the main() function (i.e. globally), we can at max declare an integer array of size 10^7
-// - for boolean arrays, the size limits are 10^7 and 10^8 for inside the main() function and globally respectively
+// - for boolean arrays, the size limits are 10^7 and 10^8 respectively
 
-
-// - hashing : pre-storing and fetch when required
+// - hashing : pre-store and fetch when required
