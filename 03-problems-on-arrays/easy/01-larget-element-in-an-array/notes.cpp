@@ -3,6 +3,7 @@ using namespace std;
 
 // 📍 bruteforce approach
 // - TC -> O(n * log(n))
+// - SC -> O(log(n)) (due to sort())
 // int largestElement (vector<int> vect){
 //     sort(vect.begin(), vect.end());
 //     return vect[vect.size() - 1];
@@ -10,6 +11,7 @@ using namespace std;
 
 // 📍 optimal approach 
 // - TC -> O(n)
+// - SC -> O(1)
 int largestElement (vector<int> vect){
     int largest = INT32_MIN;
     for(int i = 0; i < vect.size(); i++){

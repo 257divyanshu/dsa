@@ -44,12 +44,12 @@ bool check(vector<int> &nums)
 
     // A sorted array has 1 drop.
     // A rotated sorted array has 1 drop.
-    // An uniform array (or a constant array or a monolithic array) contains 0 drop.
+    // An uniform array (or a constant array or a monolithic array) contains 0 drops.
     return drops <= 1;
 }
 
 int main()
 {
-
+    
     return 0;
 };
