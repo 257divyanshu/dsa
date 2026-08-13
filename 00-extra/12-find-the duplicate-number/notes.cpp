@@ -1,6 +1,10 @@
 // - bruteforce implemented
 // - optimization pending
 
+// -----------------------------------------------
+
+// WAS THINKING ABOUT USING XOR (BUT XOR CAN'T HELP HERE):
+
 // 📍 1 ^ n
 // If n is even → 1 ^ n = n + 1
 // If n is odd → 1 ^ n = n - 1
@@ -33,3 +37,15 @@
 // | `1`     | `1`     |
 // | `2`     | `n + 1` |
 // | `3`     | `0`     |
+
+// -----------------------------------------------
+
+// HINT 1 : considering the constraints, it can be inferred that there is some structural property (a special relationship between the values and the size of the array) in the array that guarantees a duplicate
+
+// HINT 2 : Think of the array as a linked list.Think of the array as a linked list.
+
+// HINT 3 : What happens when a linked list contains a cycle? A cycle in a linked list means that instead of eventually reaching nullptr, you eventually come back to a node you've already visited.
+
+// HINT 4 : How can I detect the cycle and find where it starts, using O(1) space?
+
+// CAME UP WITH A CYCLE DETECTION IDEA, but it violates the constraints
