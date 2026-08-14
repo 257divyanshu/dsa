@@ -27,7 +27,7 @@ int removeDuplicates(vector<int> &nums)
 // - create a set of unique elements and then modify the array so that initial elements are the unique ones
 // - TC -> O( ( n * log(n) ) + n )
 // - SC -> O(n)
-// - we can use unordered_set here
+// - we cannot use unordered_set here
 // int removeDuplicates(vector<int> &nums)
 // {
 //     set<int> uniqueElements;

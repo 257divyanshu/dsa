@@ -42,10 +42,17 @@
 
 // HINT 1 : considering the constraints, it can be inferred that there is some structural property (a special relationship between the values and the size of the array) in the array that guarantees a duplicate
 
-// HINT 2 : Think of the array as a linked list.Think of the array as a linked list.
+// HINT 2 : Think of the array as a linked list.
 
-// HINT 3 : What happens when a linked list contains a cycle? A cycle in a linked list means that instead of eventually reaching nullptr, you eventually come back to a node you've already visited.
+// HINT 3 : What happens when a linked list contains a cycle?
+// ANSWER : A cycle in a linked list means that instead of eventually reaching nullptr, you eventually come back to a node you've already visited.
 
 // HINT 4 : How can I detect the cycle and find where it starts, using O(1) space?
 
-// CAME UP WITH A CYCLE DETECTION IDEA, but it violates the constraints
+// CAME UP WITH A CYCLE DETECTION IDEA, but it modifies the original array (the solution must not modify the original array)
+
+// HINT 5 : What if, instead of marking the visited positions, you keep track of two pointers moving through the array at different speeds?
+
+// VERDICT : the optimal solution uses Floyd's Cycle Detection Algorithm. So, I am skipping the optimal approach for now.
+
+// LEARNING : don't put in time in solving similar MEDIUM problems (at least for now)
