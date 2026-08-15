@@ -1,0 +1,1 @@
+// - easy question, just modify the nums array and then use the logic of Moves Zeroes question
