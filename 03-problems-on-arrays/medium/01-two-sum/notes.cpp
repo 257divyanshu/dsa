@@ -91,9 +91,16 @@ vector<int> twoSum(vector<int> &nums, int target)
 //         {
 //             if (nums[i] == nums[j])
 //             {
-//                 auto [start_it, end_it] = indexMap.equal_range(nums[i]);
-//                 indices.push_back(start_it->second);
-//                 indices.push_back((--end_it)->second);
+//                 // 📍 way 1 : using equal_range();
+//                 // auto [start_it, end_it] = indexMap.equal_range(nums[i]);
+//                 // indices.push_back(start_it->second);
+//                 // indices.push_back((--end_it)->second);
+//                 // 📍 way 2 : using find();
+//                 // INTUITION : if two identical elements sum to target, they would surely be adjacent in the multimap
+//                 auto it = indexMap.find(nums[i]);
+//                 indices.push_back(it->second);
+//                 it++;
+//                 indices.push_back(it->second);
 //                 return indices;
 //             }
 //             else
