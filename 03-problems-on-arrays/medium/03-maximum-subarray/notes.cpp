@@ -1,6 +1,9 @@
 #include <bits/stdc++.h>
 using namespace std;
 
+// 📍 logic
+// Logic: Maintain the maximum subarray sum ending at the current position, reset the running sum to 0 whenever it becomes negative, and keep track of the maximum sum seen so far.
+
 // 📍 subarray
 // - A subarray is a contiguous non-empty sequence of elements within an array.
 

@@ -1,6 +1,9 @@
 #include <bits/stdc++.h>
 using namespace std;
 
+// 📍 logic
+// Maintain a candidate and a count, where each occurrence of the candidate cancels out one occurrence of a different element; since the majority element has more occurrences than all others combined, it will remain as the final candidate.
+
 // 📝 NOTE
 // - its given in the problem that a majority element always exists in the array
 // - if that was not guranteed, we would have to do a single pass on the array again, to check if the CANDIDATE that MOORE'S VOTING ALGORITHM gave is actually the majority element

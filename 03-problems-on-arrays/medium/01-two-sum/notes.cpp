@@ -1,6 +1,9 @@
 #include <bits/stdc++.h>
 using namespace std;
 
+// 📍 logic
+// - Logic: Traverse the array while storing each number’s index in a hash map, and for every element check whether its complement (target - nums[i]) has already been seen.
+
 // 📍 optimal approach (using unordered_map) (without sorting)
 // - TC -> O(n)
 // - SC -> O(n)
