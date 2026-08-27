@@ -18,3 +18,9 @@
 // - couldn't think that the solution might involve "binary search"
 // - TC -> O(n * log(n)) 
 // - SC -> O(n)
+
+// 📍 better approach logic:
+// - First, I preprocess the array by storing all indices where nums[i] == key; these indices are sorted. Then, for each index i, I use lower_bound and upper_bound to check whether there is any key index within the range [i-k, i+k]. This takes O(n log n) time and O(n) space.
+
+// 📍 optimal approach logic:
+// - For each index i, I maintain a pointer j to the first occurrence of key that is not before i-k. Since both i and j only move forward, j never needs to move backward. If this j is also within i+k, then i is a k-distant index. This gives us O(n) time and O(1) auxiliary space.
