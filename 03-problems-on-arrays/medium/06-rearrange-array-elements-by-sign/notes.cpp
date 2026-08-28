@@ -52,6 +52,10 @@ vector<int> rearrangeArray(vector<int> &nums)
     return nums;
 }
 
+// 📍 logic
+// - We traverse the array and place every positive element at the next available even index and every negative element at the next available odd index. By incrementing each index by 2 after placement, we automatically maintain the required alternating positive-negative order.
+
+
 // 📍 optimal approach
 // - TC -> O(n) (single pass)
 // - SC -> O(n)
@@ -100,56 +104,6 @@ vector<int> rearrangeArray(vector<int> &nums)
 //         nums[2 * i + 1] = negatives[i];
 //     }
 //     return nums;
-// }
-
-// 📍 my iteration 2
-// vector<int> rearrangeArray(vector<int> &nums)
-// {
-//     vector<int> resultantVector(0);
-//     int i = 0;
-//     int j = 0;
-//     while (i < nums.size() && j < nums.size())
-//     {
-//         if (nums[i] < 0)
-//         {
-//             i++;
-//         }
-//         else if (nums[j] > 0)
-//         {
-//             j++;
-//         }
-//         else
-//         {
-//             resultantVector.push_back(nums[i]);
-//             resultantVector.push_back(nums[j]);
-//             i++;
-//             j++;
-//         }
-//     }
-//     return resultantVector;
-// }
-
-// 📍 my iteration 1
-// vector<int> rearrangeArray(vector<int> &nums)
-// {
-//     vector<int> resultantVector(0);
-//     int i = 0;
-//     int j = 0;
-//     while (i < nums.size() && j < nums.size())
-//     {
-//         while (i < nums.size() && nums[i] < 0)
-//         {
-//             i++;
-//         }
-//         while (j < nums.size() && nums[j] > 0)
-//         {
-//             j++;
-//         }
-//         resultantVector.push_back(nums[i]);
-//         resultantVector.push_back(nums[j]);
-//         i++;
-//         j++;
-//     }
 // }
 
 int main()

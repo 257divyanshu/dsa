@@ -1,6 +1,10 @@
 #include <bits/stdc++.h>
 using namespace std;
 
+// 📍 logic
+// - We keep track of the lowest buying price seen so far and calculate the profit by selling at the current price. For each day, we update the maximum profit and then update the minimum buying price for future transactions.
+
+
 // - dynamic programming is kind of 'remembering the past'
 
 // 📍 optimal method
