@@ -1,3 +1,5 @@
+// 📝 bottom to top
+
 // - Most of online servers that run code, execute roughly 10^8 operations in approximately 1 second
 
 // - NOTE : A company may use the same data for different purposes. That is why we should not attempt to manipulate the given data for reducing the space complexity. So, we will never manipulate the given data i.e. the inputs until the interviewer specifically says so.

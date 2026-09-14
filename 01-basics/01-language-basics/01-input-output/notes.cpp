@@ -1,3 +1,5 @@
+// 📝 bottom to top
+
 // 📍 Shortcut: bits/stdc++.h
 // - Instead of including libraries one by one, we can use: #include<bits/stdc++.h>
 // - Includes almost all standard libraries at once.

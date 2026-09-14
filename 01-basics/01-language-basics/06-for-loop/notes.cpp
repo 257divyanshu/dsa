@@ -1,3 +1,5 @@
+// 📝 bottom to top
+
 // 📍 demonstration (conditionals inside loops)
 #include <bits/stdc++.h>
 using namespace std;

@@ -75,7 +75,7 @@ void quickSort(vector<int> vect)
 // - TC -> O(n * log(n))
 // - SC -> O(1)
 
-// - quick sort is better than merge sort, because merger sort needs a temporary error leading to a SC of O(N)
+// - quick sort is better than merge sort, because merge sort needs a temporary space leading to a SC of O(n)
 // - quick sort algorithm is a divide and conquer algorithm
 
 int main()

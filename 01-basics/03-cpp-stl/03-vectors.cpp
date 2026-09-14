@@ -1,3 +1,5 @@
+// 📝 bottom to top
+
 // 📍 vectors
 // - vectors are dynamic
 // - arrays are not dynamic
@@ -7,6 +9,8 @@ int main()
 {
     // 📍 declaring a vector
     // vector<int> vect1; // creates an empty vector
+    // vector<itn> vect1{}; // another way
+    // vector<int> vect1 = {}; // yet another way
     // 📍 push_back()
     // vector<int> vect1;
     // vect1.push_back(1);
@@ -39,8 +43,8 @@ int main()
     // - the iterator 'it1' points to the first element
     // vector<int>::iterator it2 = v1.end();
     // - the iterator 'it2' points to the memory space after the last element
-    // vector<int>::iterator it3 = v1.rbegin(); // ❔ why this is causing issues?
-    // vector<int>::iterator it4 = v1.rend(); // ❔ why this is causing issues?
+    // vector<int>::reverse_iterator it3 = v1.rbegin();
+    // vector<int>::reverse_iterator it4 = v1.rend();
     // cout<<*(it1++)<<endl; // 1
     // cout<<*(it1++)<<endl; // 2
     // cout<<*(it1++)<<endl; // 3

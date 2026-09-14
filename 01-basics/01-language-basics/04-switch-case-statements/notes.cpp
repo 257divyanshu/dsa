@@ -1,3 +1,5 @@
+// 📝 bottom to top
+
 // 📍 NOTE
 // - The C++ compiler requires the condition in a switch statement to evaluate to an integral type (like int, char, long, or an enum).
 // - So, a string (which is a complex object) or an array of characters doesn't fit this requirement.

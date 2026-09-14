@@ -1,3 +1,5 @@
+// 📝 bottom to top
+
 #include <bits/stdc++.h>
 using namespace std;
 int main()
@@ -37,7 +39,7 @@ int main()
     //     cout << elem << " ";
     // }
     // cout << endl;
-    // s1.erase(it2, it5); // will delete 2 and 4
+    // s1.erase(it2, it5); // will delete 2, 3 and 4
     // for(auto elem : s1){
     //     cout << elem << " ";
     // }

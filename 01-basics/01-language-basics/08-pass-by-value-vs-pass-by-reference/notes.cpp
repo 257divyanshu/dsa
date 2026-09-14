@@ -1,6 +1,8 @@
+// 📝 bottom to top
+
 // 📍 pass by reference
 // - When a variable is passed by reference, the function receives the actual variable (not a copy). Any changes made inside the function will reflect on the original.
-// - The function receives the original memory address
+// - The function receives the original memory address.
 // - Useful when we want to update multiple variables or return multiple values
 // 📍 demonstration
 // #include <iostream>
@@ -17,7 +19,7 @@
 
 // 📍 pass by value
 // - When a variable is passed by value, a copy of the variable is made. The function works on that copy, and the original variable remains unchanged.
-// - The function receives a separate copy
+// - The function receives a separate copy.
 // - Is safe, but potentially less efficient for large objects.
 // 📍 demonstration
 // #include <iostream>
