@@ -1,9 +1,12 @@
 // NOTE : the concept of ARMSTRONG numbers is not applied to negative numbers
 
-// 🏆 approach 2
+// 🏆 approach 3
 
 #include <bits/stdc++.h>
 using namespace std;
+
+// 📝 Approach 3 (precomputed powers): Pre-compute powers for digits 0–9 once upfront, then look up in O(1) per digit.
+
 // 📍 approach 3 (next level optimization) (optional)
 // TC -> O(log10(n))
 // SC -> O(1)
@@ -45,6 +48,8 @@ bool isArmstrong(int n)
     return sumOfPowers == n;
 }
 
+// 📝 Approach 2 (integer power): Same idea but replace pow with a manual integer power loop (O(digitCount) per call).
+
 // 📍 approach 2 (using integer math for calculating power)
 // TC -> O ( ( log10 ( n ) ) ^ 2 )
 // SC -> O(1)
@@ -79,6 +84,8 @@ bool isArmstrong(int n)
 //     };
 //     return sumOfPowers == n;
 // }
+
+// 📝 Approach 1 (using pow): Count digits, then sum round(pow(digit, digitCount)) for each digit. round() needed because pow() returns floating point.
 
 // 📍 approach 1 (using pow)
 // TC -> un-analyzed

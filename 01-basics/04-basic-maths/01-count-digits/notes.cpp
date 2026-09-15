@@ -1,5 +1,10 @@
 // 🏆 -> approach 1
 
+// 📝 Approach 2 (log10):
+// - digits = 1 + floor(log10(|n|)) — but requires manual edge case handling for n=0 and n=INT_MIN (since abs(INT_MIN) overflows).
+// - Time: O(1)
+// - Space: O(1)
+
 #include <bits/stdc++.h>
 using namespace std;
 // 📍 approach 2
@@ -23,6 +28,12 @@ using namespace std;
 //     };
 //     return int(1 + log10(n));
 // }
+
+// 📝 Approach 1 (division loop):
+// - Repeatedly divide n by 10, incrementing a counter each time — use do-while to naturally handle n=0 without a special case.
+// - Time: O(log10(n))
+// - Space: O(1)
+
 // 📍 approach 1 v2
 // - A do-while loop guarantees the code runs at least once. This automatically handles the case where n = 0 (count becomes 1).
 int countDigits(int n)

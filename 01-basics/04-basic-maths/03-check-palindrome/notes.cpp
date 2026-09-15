@@ -1,7 +1,12 @@
+// 🔗 QUESTION LINK: https://leetcode.com/problems/palindrome-number/description/
+
 #include <iostream>
 using namespace std;
 
-// 🏆 approach 1 v2
+// 🏆 approach 2
+
+// 📝 Approach 2 — Half reversal (optimal):
+// - Reverse only the second half of digits (loop while x > reversedHalf); negatives and trailing-zero numbers are false upfront. No overflow risk since you're only reversing half.
 
 // 📍 method 2 (pro optimization)
 // - TC -> O(log10(n))
@@ -37,29 +42,12 @@ bool isPalindrome(int x)
 // 📍 NOTE
 // - Since, we are either filtering out negatives explicitly (Version 2) or preventing the loop from running on negatives (Version 1), reverseNumber will never be negative, we can safely remove the INT32_MIN check to clean up the code.
 
-// 📍 complexity analysis
+// 📝 Approach 1 — Full reversal:
+// - Reverse the entire number and compare with original; handle negatives explicitly. Overflow check still needed.
+
+// 📍 approach 1 (v2) (explicit)
 // - TC -> O(log10(n))
 // - SC -> O(1)
-// 📍 approach 1 (v1) (implicit)
-// Function to check if a given integer is a palindrome
-// bool isPalindrome(int x)
-// {
-//     int dup = x; // Create a duplicate variable to store the original number
-//     int reverseNumber = 0; // Initialize a variable to store the reverse of the number
-//     // Iterate through each digit of the number until it becomes 0
-//     while (dup > 0)
-//     {
-//         int lastDigit = dup % 10; // Extract the last digit of the number
-//         if (reverseNumber > INT32_MAX / 10 || reverseNumber < INT32_MIN / 10) // 📍 we can safely remove the INT32_MIN check to clean up the code
-//         {
-//             return false;
-//         };
-//         reverseNumber = reverseNumber * 10 + lastDigit; // Build the reverse number by appending the last digit
-//         dup /= 10; // Remove the last digit from the original number
-//     };
-//     return reverseNumber == x; // Check if the original number is equal to its reverse
-// }
-// 📍 approach 1 (v2) (explicit)
 // Function to check if a given integer is a palindrome
 // bool isPalindrome(int x)
 // {
@@ -73,7 +61,29 @@ bool isPalindrome(int x)
 //     while (dup != 0)
 //     {
 //         int lastDigit = dup % 10; // Extract the last digit of the number
-//         if (reverseNumber > INT32_MAX / 10 || reverseNumber < INT32_MIN / 10) // 📍 we can safely remove the INT32_MIN check to clean up the code
+//         if (reverseNumber > INT32_MAX / 10 || reverseNumber < INT32_MIN / 10)
+//         {
+//             return false;
+//         };
+//         reverseNumber = reverseNumber * 10 + lastDigit; // Build the reverse number by appending the last digit
+//         dup /= 10; // Remove the last digit from the original number
+//     };
+//     return reverseNumber == x; // Check if the original number is equal to its reverse
+// }
+
+// 📍 approach 1 (v1) (implicit)
+// - TC -> O(log10(n))
+// - SC -> O(1)
+// Function to check if a given integer is a palindrome
+// bool isPalindrome(int x)
+// {
+//     int dup = x; // Create a duplicate variable to store the original number
+//     int reverseNumber = 0; // Initialize a variable to store the reverse of the number
+//     // Iterate through each digit of the number until it becomes 0
+//     while (dup > 0)
+//     {
+//         int lastDigit = dup % 10; // Extract the last digit of the number
+//         if (reverseNumber > INT32_MAX / 10 || reverseNumber < INT32_MIN / 10)
 //         {
 //             return false;
 //         };

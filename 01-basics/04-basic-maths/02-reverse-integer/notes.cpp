@@ -1,7 +1,12 @@
+// 🔗 QUESTION LINK: https://leetcode.com/problems/reverse-integer/description/
+
+// 📝 Approach (overflow-safe reversal):
+// - Extract digits via x % 10, but before updating reversedNumber = reversedNumber * 10 + digit, check if reversedNumber > INT_MAX/10 or reversedNumber < INT_MIN/10 — if so, return 0. The multiplication is the only overflow risk; the digit addition can't overflow.
+
 #include <bits/stdc++.h>
 using namespace std;
 // 📍 intution for handling the edge case when reversing x causes the value to go outside the signed 32-bit integer range
-// - inside the while loop code block:
+// - inside the while loop code block we
 // reversedNumber = reversedNumber * 10 + lastDigit;
 // - is the statement where we are updating reversedNumber's value
 // - two operations are being performed in this statement
