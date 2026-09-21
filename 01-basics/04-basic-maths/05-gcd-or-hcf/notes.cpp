@@ -1,10 +1,12 @@
 #include <bits/stdc++.h>
 using namespace std;
 
+// 📝 Approach 3 (Euclidean algorithm): Repeatedly replace the larger number with larger % smaller until one becomes 0 — the other is the GCD.
+
 // 📍 approach 3 (euclidean algorithm)
 // 📍 EUCLIDEAN ALGORITHM : 
 // - gcd(x, y) => gcd(x-y, y) (if x > y)
-// - if we use that, we'll have to do many many iterations 
+// - if we use that, we'll have to do many iterations 
 // - gcd(x, y) => gcd(x%y, y) (if x > y) 
 // - if we use this, we'll have to do comparatively less iterations
 // - tc -> O(logφ(min(a,b)))
@@ -26,7 +28,9 @@ int getGCD(int x, int y)
     };
 }
 
-// 📍 approach 2
+// 📝 Approach 2 (brute force optimized): Loop i from min(x,y) down to 1, return immediately when i divides both — skipping all smaller candidates entirely.
+
+// 📍 approach 2 (brute force optimized)
 // - tc -> O(min(x,y))
 // - but still, its slightly better than approach 1
 // int getGCD(int x, int y)
@@ -56,7 +60,9 @@ int getGCD(int x, int y)
 //     return result;
 // }
 
-// 📍 approach 1
+// 📝 Approach 1 (brute force): Loop i from 2 to min(x,y), track the largest i that divides both.
+
+// 📍 approach 1 (bruteforce)
 // - tc -> O(min(x,y))
 // int getGCD(int x, int y)
 // {

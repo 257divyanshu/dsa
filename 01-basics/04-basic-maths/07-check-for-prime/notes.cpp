@@ -3,7 +3,9 @@ using namespace std;
 
 // 🏆 approach 2
 
-// 📍 approach 2 (better method)
+// 📝 Approach 2 (square root optimization): Loop only up to √n — if n has a divisor larger than √n, its pair must be smaller than √n and would've already been caught. TC: O(√n), SC: O(1)
+
+// 📍 approach 2 (square root optimization)
 // - TC -> O(sqrt(n))
 // - SC -> O(1)
 bool isPrime(int num)
@@ -23,7 +25,9 @@ bool isPrime(int num)
     return true;
 };
 
-// 📍 approach 1 (bruteforce method)
+// 📝 Approach 1 (brute force): Loop from 2 to n-1, return false if any i divides n.
+
+// 📍 approach 1 (brute force)
 // - TC -> O(n)
 // - SC -> O(1)
 // bool isPrime(int num)
