@@ -3,8 +3,12 @@
 #include <bits/stdc++.h>
 using namespace std;
 
+// 🔗 read this solution's explanation: https://leetcode.com/problems/count-primes/solutions/8535128/sieve-of-eratosthenes-tle-fixed-proper-e-7b9p
+// - to understand 'Why Vector bool Approach Fails?'
+
 // 📝 optimal approach (sieve of eratosthenes)
 // Time complexity: O(n(log(log(n)))
+// - This is almost linear. The inner loop does not run n times for every number; it runs n/2 times for 2, n/3 times for 3, n/5 times for 5, and so on. The harmonic series of primes grows extremely slowly, making it incredibly fast.
 // Space complexity: O(n)
 int countPrimes(int n)
 {
@@ -36,6 +40,8 @@ int countPrimes(int n)
 // 📝 better approach: For each number from 2 to n-1, check if it's prime by trial dividing only up to √i
 
 // 📍 better approach
+// tc -> O(n^sqrt(n))
+// sc -> O(1)
 int countPrimes(int n)
 {
     int prime_count = 0;
