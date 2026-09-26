@@ -1,5 +1,3 @@
-**Usually yes, but it depends on what you're inserting.**
-
 - `push_back()` takes an already-constructed object and copies/moves it in.
 - `emplace_back()` constructs the object **in-place** directly inside the vector, skipping the extra copy/move.
 
