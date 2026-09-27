@@ -3,7 +3,9 @@ using namespace std;
 
 // 🏆 third approach
 
-// - Second and third are the same TC — O(sqrt(n) * log(n)). Third is better in practice though since it avoids the overhead of a set (no tree allocations, better cache behavior).
+// - Second and third have the same TC — O(sqrt(n) * log(n)). Third is better in practice, because it avoids the overhead of a set (no tree allocations, better cache behavior).
+
+// 📝 third approach: Loop to √n, collect both i and n/i into a vector, sort at the end — avoids set overhead.
 
 // 📍 third approach
 // - TC -> O(sqrt(n) + sqrt(n)*log(sqrt(n)))
@@ -30,6 +32,8 @@ vector<int> divisors(int n)
     sort(result.begin(), result.end());
     return result;
 }
+
+// 📝 second approach: Loop to √n, collect both i and n/i into a set (handles duplicates automatically, stays sorted).
 
 // 📍 second approach
 // - TC -> O(sqrt(n)*log(sqrt(n)) + sqrt(n))
@@ -58,6 +62,8 @@ vector<int> divisors(int n)
     }
     return resultVector;
 }
+
+// 📝 first approach: Loop from 1 to n, collect every i that divides n.
 
 // 📍 first approach
 // - TC -> O(n)

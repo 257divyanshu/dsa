@@ -1,101 +1,101 @@
-// 📍 check if a string is palindrome
-#include <bits/stdc++.h>
-using namespace std;
-// 🏆 approach 1 polished version
-// 📍 approach 1 polished version
-// - TC -> O(n)
-// - SC -> O(1)
-bool isPalindrome(string s)
-{
-    int start = 0;
-    int end = s.length() - 1;
-    while (start < end)
-    {
-        // 1. Move start forward if not alphanumeric
-        while (!isalnum(s[start]))
-        {
-            start++;
-            continue;
-        };
-        // 2. Move end backward if not alphanumeric
-        while (!isalnum(s[end]))
-        {
-            end--;
-            continue;
-        };
-        // cout << s[start] << " and " << s[end] << endl;
-        // 3. Compare characters
-        if (tolower(s[start]) != tolower(s[end]))
-        {
-            return false;
-        };
-        // 4. Update pointers after a successful match
-        start++;
-        end--;
-    };
-    return true;
-};
-// 📍 approach 2
-// - TC -> O(n)
-// - SC -> O(n)
-// - where n is the length of the string s
-// bool isPalindrome(string s)
-// {
-//     string updatedString = "";
-//     for (int i = 0; i < s.length(); i++) // O(n)
-//     {
-//         if ((s[i] >= 'a' && s[i] <= 'z') || (s[i] >= 'A' && s[i] <= 'Z') ||
-//             (s[i] >= '0' && s[i] <= '9'))
-//         {
-//             updatedString += tolower(s[i]); // 📝 appending a character is ammortized constant time operation (O(1)) 
-//         };
-//     };
-//     int start = 0;
-//     int end = updatedString.length() - 1;
-//     while (start <= end) // O(n/2)
-//     {
-//         // cout << updatedString[start] << " and " << updatedString[end] << endl;
-//         if (updatedString[start] != updatedString[end])
-//         {
-//             return false;
-//         };
-//         start++;
-//         end--;
-//     };
-//     return true;
-// };
-// 📍 approach 1
-// - TC -> O(n)
-// - SC -> O(1)
-// - where n is the length of the string s
+// 📍 LEETCODE question VALID PALINDROME
+// #include <bits/stdc++.h>
+// using namespace std;
+// // 🏆 approach 1 polished version
+// // 📍 approach 1 polished version
+// // - TC -> O(n)
+// // - SC -> O(1)
 // bool isPalindrome(string s)
 // {
 //     int start = 0;
 //     int end = s.length() - 1;
-//     while (start <= end) // O(n/2)
+//     while (start < end)
 //     {
-//         while (start <= end && !(s[start] >= 'a' && s[start] <= 'z') &&
-//                !(s[start] >= 'A' && s[start] <= 'Z') &&
-//                !(s[start] >= '0' && s[start] <= '9'))
+//         // 1. Move start forward if not alphanumeric
+//         while (!isalnum(s[start]))
 //         {
 //             start++;
+//             continue;
 //         };
-//         while (start <= end && !(s[end] >= 'a' && s[end] <= 'z') &&
-//                !(s[end] >= 'A' && s[end] <= 'Z') &&
-//                !(s[end] >= '0' && s[end] <= '9'))
+//         // 2. Move end backward if not alphanumeric
+//         while (!isalnum(s[end]))
 //         {
 //             end--;
+//             continue;
 //         };
 //         // cout << s[start] << " and " << s[end] << endl;
-//         if (start <= end && (tolower(s[start]) != tolower(s[end])))
+//         // 3. Compare characters
+//         if (tolower(s[start]) != tolower(s[end]))
 //         {
 //             return false;
 //         };
+//         // 4. Update pointers after a successful match
 //         start++;
 //         end--;
 //     };
 //     return true;
 // };
+// // 📍 approach 2
+// // - TC -> O(n)
+// // - SC -> O(n)
+// // - where n is the length of the string s
+// // bool isPalindrome(string s)
+// // {
+// //     string updatedString = "";
+// //     for (int i = 0; i < s.length(); i++) // O(n)
+// //     {
+// //         if ((s[i] >= 'a' && s[i] <= 'z') || (s[i] >= 'A' && s[i] <= 'Z') ||
+// //             (s[i] >= '0' && s[i] <= '9'))
+// //         {
+// //             updatedString += tolower(s[i]); // 📝 appending a character is ammortized constant time operation (O(1))
+// //         };
+// //     };
+// //     int start = 0;
+// //     int end = updatedString.length() - 1;
+// //     while (start <= end) // O(n/2)
+// //     {
+// //         // cout << updatedString[start] << " and " << updatedString[end] << endl;
+// //         if (updatedString[start] != updatedString[end])
+// //         {
+// //             return false;
+// //         };
+// //         start++;
+// //         end--;
+// //     };
+// //     return true;
+// // };
+// // 📍 approach 1
+// // - TC -> O(n)
+// // - SC -> O(1)
+// // - where n is the length of the string s
+// // bool isPalindrome(string s)
+// // {
+// //     int start = 0;
+// //     int end = s.length() - 1;
+// //     while (start <= end) // O(n/2)
+// //     {
+// //         while (start <= end && !(s[start] >= 'a' && s[start] <= 'z') &&
+// //                !(s[start] >= 'A' && s[start] <= 'Z') &&
+// //                !(s[start] >= '0' && s[start] <= '9'))
+// //         {
+// //             start++;
+// //         };
+// //         while (start <= end && !(s[end] >= 'a' && s[end] <= 'z') &&
+// //                !(s[end] >= 'A' && s[end] <= 'Z') &&
+// //                !(s[end] >= '0' && s[end] <= '9'))
+// //         {
+// //             end--;
+// //         };
+// //         // cout << s[start] << " and " << s[end] << endl;
+// //         if (start <= end && (tolower(s[start]) != tolower(s[end])))
+// //         {
+// //             return false;
+// //         };
+// //         start++;
+// //         end--;
+// //     };
+// //     return true;
+// // };
 // int main()
 // {
 //     string lordName = "Shri Krishna";
@@ -103,13 +103,30 @@ bool isPalindrome(string s)
 //     return 0;
 // };
 
+// 📍 check if a string is palindrome or not
+// TC -> O(n) (O(n/2) precisely)
+// SC -> O(n) (O(n/2) precisely)
+#include <bits/stdc++.h>
+using namespace std;
+bool isPalindrome(int i, string &s){
+    if(i >= s.size()/2) return true;
+    if(s[i] != s[s.size() - i - 1]) return false;
+    return isPalindrome(i+1, s);
+}
+int main()
+{
+    string greet = "Hare Krishna";
+    cout << isPalindrome(0, greet) << endl;
+    return 0;
+};
+
 // 📍 reverse an array
 // #include <bits/stdc++.h>
 // using namespace std;
 // void reverseArray(vector<int> &nums, int i)
 // {
 //     int n = nums.size();
-//     if (i > (n / 2))
+//     if (i >= (n / 2))
 //     {
 //         return;
 //     };
@@ -159,22 +176,22 @@ bool isPalindrome(string s)
 // 📍 sum of first N numbers
 // #include <bits/stdc++.h>
 // using namespace std;
-// 1️⃣ functional recursion
+// // 1️⃣ functional recursion
 // int sumOfFirstNNumbers(int n){
 //     if(n == 0){
 //         return 0;
 //     };
 //     return (n + sumOfFirstNNumbers(n-1));
 // }
-// 2️⃣ parameterized recursion
-// 📍 my approach
+// // 2️⃣ parameterized recursion
+// // 📍 my approach
 // int sumOfFirstNNumbers(int n, int sum){
 //     if(n < 1){
 //         return sum;
 //     };
 //     sumOfFirstNNumbers(n-1, sum+n);
 // }
-// 📍 sir's approach
+// // 📍 sir's approach
 // void sumOfFirstNNumbers(int n, int sum){
 //     if(n < 1){
 //         cout << sum << endl;
@@ -311,7 +328,9 @@ bool isPalindrome(string s)
 
 // - when a function is invoked, it enters the stack
 
-// - its the base condition that prevents stack overflow
+// - the base condition prevents stack overflow
+// - the stack keeps getting filled with functions as they are invoked
+// - only after the base condition is reached, emptying of stack begins
 
 // 📍 RECURSION
 // - a function calling itself until a specific condition is met
