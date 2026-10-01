@@ -2,7 +2,7 @@
 using namespace std;
 
 // - in maps, we can even have pairs as keys
-// - in hashmaps, we can only have inidividual data types (like int, char, etc) as keys, we cannot have pairs as keys 
+// - in unordered_maps, we can only have inidividual data types (like int, char, etc) as keys, we cannot have pairs as keys 
 
 // - using unordered_map will give us O(n) TC in best and average case, and O(n^2) TC in worst case (when collisions happen)
 // - using map will give us O(n*log(n)) TC
