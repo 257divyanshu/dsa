@@ -13,3 +13,6 @@
 
 // to get the key of the first key-value pair present in the map, use mapName.begin()->first
 // to get the value of the first key-value pair present in the map, use mapName.begin()->second
+
+// 📍 to initialize a vector of size 1e5 containing only zeroes
+// vector<int> v(1e5, 0);

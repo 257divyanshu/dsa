@@ -1,6 +1,54 @@
 #include <bits/stdc++.h>
 using namespace std;
 
+// 📍 second approach
+// TC -> O(n + l)
+// SC -> O(l)
+// where l is the largest value in the array
+int secondMostFrequentElement(vector<int> &nums)
+{
+    int largestNum = 0;
+    for(int num : nums){ // TC -> O(n)
+        if(num > largestNum){
+            largestNum = num;
+        }
+    }
+    vector<int> hashVect (largestNum + 1, 0); // SC -> O(l)
+    for(int num : nums){ // TC -> O(n)
+        hashVect[num]++;
+    }
+    int largestFrequency = 0;
+    int secondLargestFrequency = -1;
+    int mostFreqElem = 0;
+    int secondMostFreqElem = -1;
+    for(int i = 0; i<hashVect.size(); i++){ // TC -> O(l)
+        if(hashVect[i] > largestFrequency){
+            secondLargestFrequency = largestFrequency;
+            largestFrequency = hashVect[i];
+            secondMostFreqElem = mostFreqElem;
+            mostFreqElem = i; 
+            
+        }
+        else if (
+            (hashVect[i] < largestFrequency) &&
+            (hashVect[i] > secondLargestFrequency)
+        ){
+            secondLargestFrequency = hashVect[i];
+            secondMostFreqElem = i;
+        }
+    }
+    return secondMostFreqElem;
+}
+
+// 📍 why TC of first approach is better conveyed by O(n * log(k)) than by O(n * log(n))
+// - O(n * log(n)) is correct as worst case bound (when all elements are distinct, k = n)
+// - O(n * log(k)) shows the cost depends on the number of distinct elements, not just n
+// - both are valid upper bounds; O(n log k) just carries more information
+
+// 📍 first approach
+// TC -> O(n * log(k))
+// SC -> O(k)
+// where k is the number of distinct elements
 int secondMostFrequentElement(vector<int> &nums)
 {
     map<int,int> hashMap;
