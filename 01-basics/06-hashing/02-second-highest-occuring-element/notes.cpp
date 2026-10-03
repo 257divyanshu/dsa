@@ -1,6 +1,8 @@
 #include <bits/stdc++.h>
 using namespace std;
 
+// 📝 second approach: since values are bounded, use a frequency array indexed by value instead of a map, then scan it in increasing order tracking the top two distinct frequencies
+
 // 📍 second approach
 // TC -> O(n + l)
 // SC -> O(l)
@@ -19,7 +21,7 @@ int secondMostFrequentElement(vector<int> &nums)
     }
     int largestFrequency = 0;
     int secondLargestFrequency = -1;
-    int mostFreqElem = 0;
+    int mostFreqElem = -1; // setting mostFreqElem to 0 causes issues for cases where there is no secondMostFrequentElement
     int secondMostFreqElem = -1;
     for(int i = 0; i<hashVect.size(); i++){ // TC -> O(l)
         if(hashVect[i] > largestFrequency){
@@ -44,6 +46,8 @@ int secondMostFrequentElement(vector<int> &nums)
 // - O(n * log(n)) is correct as worst case bound (when all elements are distinct, k = n)
 // - O(n * log(k)) shows the cost depends on the number of distinct elements, not just n
 // - both are valid upper bounds; O(n log k) just carries more information
+
+// 📝 first approach: count frequencies in a map, then scan it once tracking the highest and second highest frequency, so ties resolve to the smallest element
 
 // 📍 first approach
 // TC -> O(n * log(k))
